@@ -11,9 +11,6 @@
 <body>
 
 <div class="container">
-<!-- <span class="line">0,15,20,10
-</span> -->
-
     </br>
   	<table id="item-list" class="table table-bordered table-striped table-hover" style="width:100%">
 		<thead>

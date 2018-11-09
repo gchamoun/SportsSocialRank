@@ -18,17 +18,17 @@ run();
 
 
 
-function run (){    
+function run (){
 
 twitterDBRunInfo();
 twitterApiRun();
- 
+
 }
 
 ////-------------------------------------------------------------------------------
 //Name: twitterDBRunInfo
 //Description: Collects all the info needed for running the twitter api call such as which Users
-//info to collect and at what date the run was done on 
+//info to collect and at what date the run was done on
 //Methods Called: RunQuery();
 //Variables: $conn - Connection to DB. $numUsers - Number of users in db
 //$dateTime - Current date and time. $LastRunEndId - Where the last run ended.
@@ -40,8 +40,8 @@ function twitterDBRunInfo (){
         global $dateTime;
         global $numUsers;
 
-$LastRunEndId;
-$numUsers;
+        $LastRunEndId;
+        $numUsers;
 
 
 
@@ -63,17 +63,32 @@ function twitterApiRun(){
                 global $differenceInFollowers;
 
     $usersArray = getUsers($currentStartId,$currentEndId,$numUsers);
-    
-    twitterAPI($usersArray,$dateTime);
-    
+$currentGroupRunId = getLastGroupRunID();
+    twitterAPI($currentGroupRunId, $usersArray,$dateTime);
+
 }
+////-------------------------------------------------------------------------------
+//Name: getLasGroupRunID
+//Description: Starts calling the twitter API
+//Methods Called: RunQuery();
+////-------------------------------------------------------------------------------
+
+function getLastGroupRunID(){
+
+ SELECT MAX(group_run_id) FROM sportssocialrank.twitter_archive;
+ $row =  runQuery($sql, False);
+   $lastGroupRunId = $row['MAX(group_run_id)'];
+   $currentGroupRunId = $lastGroupRunId + 1;
+return $currentGroupRunId;
+}
+
 
 ////-------------------------------------------------------------------------------
 //Name: twitterApi
 //Description: Starts calling the twitter API
 //Methods Called: RunQuery();
 ////-------------------------------------------------------------------------------
-function twitterAPI($usersArray,$dateTime){
+function twitterAPI($groupdId, $usersArray,$dateTime){
     global $differenceInFollowers;
 
     require_once('TwitterAPIExchange.php');
@@ -88,7 +103,7 @@ $settings = array(
 
 'consumer_secret' => "RTg9GlOPcX0YCCkodKzMzUw7z1iOdVy5fwJlD5JxbqW33XKNmL"
 
-); 
+);
 
     $url = 'https://api.twitter.com/1.1/users/show.json';
     $requestMethod = 'GET';
@@ -114,19 +129,19 @@ $teamDisplayName = $twitterInfo->screen_name;
 
 $followersAtCurrentTime = $twitterInfo->followers_count;
 $differenceInFollowers = getDayFollowerCount($followersAtCurrentTime,$teamDisplayName);
-insertTwitterArchive($twitterInfo,$differenceInFollowers );
-insertTwitter($twitterInfo, $differenceInFollowers);
+insertTwitterArchive($groupdId, $twitterInfo,$differenceInFollowers );
+insertTwitter($groupdId, $twitterInfo, $differenceInFollowers);
 
 }
-       
-       
-       
-       
 
-       
+
+
+
+
+
     }
 
-    
+
 ////-------------------------------------------------------------------------------
 //Name: insertIntoArchiveDB
 //Description: Queries database to find which users to include in run
@@ -135,11 +150,14 @@ insertTwitter($twitterInfo, $differenceInFollowers);
 ////-------------------------------------------------------------------------------
 function insertTwitterArchive($twitterInfo,$differenceInFollowers){
 $date = getDateTime();
-    $sql = "INSERT INTO twitter_archive (name,date, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
-        . "VALUES ('$twitterInfo->name','$date', '$twitterInfo->screen_name','$twitterInfo->followers_count','$twitterInfo->friends_count','$twitterInfo->profile_image_url','$twitterInfo->profile_banner_url','$differenceInFollowers')";
+    $sql = "INSERT INTO twitter_archive (group_run_id, name,date, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
+        . "VALUES ('$groupdId, $twitterInfo->name','$date', '$twitterInfo->screen_name','$twitterInfo->followers_count','$twitterInfo->friends_count','$twitterInfo->profile_image_url','$twitterInfo->profile_banner_url','$differenceInFollowers')";
     runQuery($sql, True);
-    
+
 }
+
+
+
 
 ////-------------------------------------------------------------------------------
 //Name: insertTwitter
@@ -147,10 +165,10 @@ $date = getDateTime();
 //SQL Query: SELECT * FROM sportssocialrank.twitter_dbupdates;
 //Methods Called: RunQuery();
 ////-------------------------------------------------------------------------------
-function insertTwitter($twitterInfo,$differenceInFollowers){
+function insertTwitter($groupdId, $twitterInfo,$differenceInFollowers){
         echo $twitterInfo->screen_name;
 
- $sql =  "SELECT id FROM twitter WHERE display_name =  '".$twitterInfo->screen_name."';"; 
+ $sql =  "SELECT id FROM twitter WHERE display_name =  '".$twitterInfo->screen_name."';";
    $row =  runQuery($sql, False);
      $id = $row['id'];
      $date  = getDateTime();
@@ -159,23 +177,23 @@ function insertTwitter($twitterInfo,$differenceInFollowers){
      echo $id;
      echo ' ';
 if($id == null){
-    $sql = "INSERT INTO twitter (name,date, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
-        . "VALUES ('$twitterInfo->name','$date', '$twitterInfo->screen_name','$twitterInfo->followers_count','$twitterInfo->friends_count','$twitterInfo->profile_image_url','$twitterInfo->profile_banner_url','$differenceInFollowers')";
+    $sql = "INSERT INTO twitter (group_run_id, name,date, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
+        . "VALUES ('$groupdId','$twitterInfo->name','$date', '$twitterInfo->screen_name','$twitterInfo->followers_count','$twitterInfo->friends_count','$twitterInfo->profile_image_url','$twitterInfo->profile_banner_url','$differenceInFollowers')";
 echo($sql);
     runQuery($sql, True);
 }
 else{
-    
+
 $sql = "UPDATE twitter SET name ='".$twitterInfo->name."',date='".$date."', display_name = '".$twitterInfo->screen_name."',followers ='".$twitterInfo->followers_count.
        "', following ='".$twitterInfo->friends_count."' , profile_image_url ='".
         $twitterInfo->profile_image_url."' , profile_banner_url ='".$twitterInfo->profile_banner_url."', "
-        . "followers_today_count ='".$differenceInFollowers."' 
+        . "followers_today_count ='".$differenceInFollowers."'
 WHERE display_name = '".$twitterInfo->screen_name."';";
 
 }
 }
-    
-    
+
+
 ////-------------------------------------------------------------------------------
 //Name: getDayFollowerCount
 //Description: Queries database to find which users to include in run
@@ -184,9 +202,9 @@ WHERE display_name = '".$twitterInfo->screen_name."';";
 ////-------------------------------------------------------------------------------
 function getDayFollowerCount($followersAtCurrentTime,$teamDisplayName){
 
-    
+
     $date = getDateShort();
-    
+
     $sql = "SELECT followers FROM twitter_archive WHERE date BETWEEN '".$date." 00:00:00' AND '". $date ." 23:59:59' and display_name= '". $teamDisplayName. "'  ORDER BY id ASC LIMIT 1;";
     $row = runQuery($sql,false);
 $startOfDayFollowers = $row['followers'];
@@ -218,8 +236,8 @@ function getUsers($currentStartId,$currentEndId,$numUsers){
     }
 
     $result = $conn->query($sql);
-    
-    
+
+
 if ($result->num_rows > 0) {
 
     while($row = $result->fetch_assoc()) {
@@ -255,13 +273,13 @@ if ($conn->connect_error) {
 
     die("Connection failed: " . $conn->connect_error);
 
-} 
+}
     return $conn;
 }
 
 ////-------------------------------------------------------------------------------
 //Name: getNumUsers
-//Description: Get number of users 
+//Description: Get number of users
 //SQL Query: SELECT COUNT(*) FROM users;"
 //Methods Called: RunQuery();
 ////-------------------------------------------------------------------------------
@@ -317,25 +335,25 @@ function getStartId($LastRunEndId,$numUsers){
 //Check if Users less then 900, if so start start at 0
     if($numUsers < 900){
         $currentStartId = 1;
-        
+
         return $currentStartId;
         }
-        
-//Check if Run will not reach end of Users     
-        
+
+//Check if Run will not reach end of Users
+
     elseif($LastRunEndId + 900 < $numUsers){
-        
+
          $currentStartId = $LastRunEndId + 1;
         return $currentStartId;
         }
-        
-   //If Run reaches end of Users      
-        
+
+   //If Run reaches end of Users
+
     else{
             $currentStartId = $LastRunEndId + 1;
         return $currentStartId;
     }
-    
+
 
 }
 
@@ -351,29 +369,29 @@ function getEndId($LastRunEndId,$numUsers,$currentStartId){
 
 //Check if Users less then 900, if so start start at 0
     if($numUsers < 900){
-        
+
         $currentEndId = $numUsers;
         return $currentEndId;
         }
-        
-//Check if Run will not reach end of Users     
-        
+
+//Check if Run will not reach end of Users
+
     elseif($LastRunEndId + 900 < $numUsers){
-        
+
          $currentEndId = $currentStartId + 900;
                  return $currentEndId;
 
         }
-        
-   //If Run reaches end of Users      
-        
+
+   //If Run reaches end of Users
+
     else{
             $numDistance = $numUsers - $currentStartId;
             $currentEndId = 900 - $numDistance;
                     return $currentEndId;
 
     }
-    
+
 
 }
 
@@ -406,6 +424,3 @@ return $row;
 
 
 ?>
-
-
-
