@@ -1,0 +1,41 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 5, 2018, 10:49:31 PM
+    Author     : gcham
+*/
+body {
+       padding-top: 67px;
+    background-color:#ffffff;
+
+}
+.seach-card{
+    background-color:#fafafa;
+}
+.search-group{
+    
+    padding-top: 8px;
+
+}
+.bg-social-blue{
+    background-color: #0084b4;
+}
+.custom-file-control, .form-control, .is-focused .custom-file-control, .is-focused .form-control {
+    background-image: linear-gradient(0deg,#0084b49c 2px,rgba(0,150,136,0) 0),linear-gradient(0deg,rgba(0,0,0,.26) 1px,transparent 0);
+}
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+        background-color: #007bff;
+    border-color: #007bff;
+}
+.usernameString {
+    overflow:hidden;
+}
+.userImage {
+    float:left;    border-radius: 50%;
+ margin-right:10px;
+}
