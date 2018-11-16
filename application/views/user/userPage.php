@@ -17,13 +17,14 @@
         <h1>@<?php echo $team ?></h1>
   	<table id="teamTable" class="table table-bordered table-striped table-hover" style="width:100%">
 		<thead>
-			<tr>                          
+			<tr>
                             <th>Followers</th>
 
                                                     <th>Following</th>
                                                     <th>Followers Today</th>
 
                                                     <th>Date</th>
+																										<th>Group Run ID</th>
 
 
 			</tr>
@@ -41,12 +42,12 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-    
-    $('#teamTable').DataTable({        
+
+    $('#teamTable').DataTable({
                 // This shows just the table,
 responsive: true,
                 "deferRender": true,
-        
+
          paging: false,
                 "bAutoWidth": false,
                 "ajax": {

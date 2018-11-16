@@ -14,9 +14,9 @@ class User extends CI_Controller {
 else{
 $this->index($param);}
        }
-    
 
-    function index($param){       
+
+    function index($param){
 
                 $data['team'] = $param;
         $data['title'] = ucfirst($param); // Capitalize the first letter
@@ -24,12 +24,12 @@ $this->index($param);}
                 $this->load->model('User_model');
      $this->User_model->isUser($param);
             $this->load->view('user/userPage',  $data);
-        $this->load->view('templates/footer', $data);        
+        $this->load->view('templates/footer', $data);
 
-     
-     
+
+
     }
-    
+
    public function get_team()
    {
       $draw = intval($this->input->get("draw"));
@@ -42,17 +42,17 @@ if (isset($_POST['formName'])) {
     // ...
 }
 
-      
+
             $query = $this->db->query("
-     SELECT * FROM twitter_archive where display_name = '" . $values ."' 
-            ORDER 
+     SELECT * FROM twitter_archive where display_name = '" . $values ."'
+            ORDER
             BY date desc;");
 
 
       $data = [];
 
 
-      foreach($query->result() as $key => $r) 
+      foreach($query->result() as $key => $r)
           {
       $followers = (int) $r->followers;
           $newfollowers = number_format($followers);
@@ -62,14 +62,16 @@ if (isset($_POST['formName'])) {
           $followerstoday = number_format($followerstoday);
           $baseurl = base_url();
                     $date =  $r->date;
-
+                    $groupRunId = $r->group_run_id;
            $growthRate =  $followerstoday / $followers;
           $data[] = array(
 
 $newfollowers,
                $newfollowing,
                                $followerstoday,
-              $date);
+              $date
+            ,
+          $groupRunId);
       }
 
 
@@ -85,4 +87,3 @@ $newfollowers,
       exit();
    }
 }
-
