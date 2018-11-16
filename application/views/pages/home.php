@@ -9,22 +9,22 @@
 	<title>Sports Social Rank</title>
 </head>
 <body>
-
 <div class="container">
     </br>
   	<table id="item-list" class="table table-bordered table-striped table-hover" style="width:100%">
 		<thead>
 			<tr>
-                            <th>Rank</th>
 
 				<th>Name</th>
 
 				<th>Followers</th>
                           <th>Following</th>
                                                     <th>Followers Today</th>
-                                                    <th>Category</th>
-
                                                     <th>Growth Rate</th>
+
+                                                    <th>Category</th>
+                                                    <th>Last Run</th>
+                                                    <th>Group Run ID</th>
 
 
 			</tr>

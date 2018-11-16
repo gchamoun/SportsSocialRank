@@ -14,33 +14,50 @@ $(".line").peity("line");
 
 </script>
 
-<script>
-    $(document).ready(function() {
-    $('#example').DataTable( {
-  "order": [[ 3, "desc" ]]
-} );
-} );
-    </script>
-
-    <script>
-
-    </script>
 <script type="text/javascript">
-$(document).ready(function() {
-    $('#item-list').DataTable({
-                // This shows just the table,
-                "ajax": {
-            url : "get_items",
-            type : 'GET',
-        },    responsive: true,
-                "deferRender": true,
 
-         paging: false,
-                "bAutoWidth": false,
-        "order": [[ 0, "asc" ]]
+$('#item-list').DataTable({
+  //'deferRender': false,
+  'ajax'       : {
+    "type"   : "Get",
+    "url"    : "get_latest",
+
+    "dataSrc": function (json) {
+      var return_data = new Array();
+      for(var i=0;i< json.length; i++){
+        return_data.push({
+          'user':'<a href="user/'+ json[i].display_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].display_name + '</div></a>',
+          'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+          'followers' : json[i].followers,
+          'following' : json[i].following,
+          'followers_today_count' : json[i].followers_today_count,
+          'growth_rate' : json[i].followers_today_count/json[i].followers,
+          'Category' : json[i].Category,
+          'date' : json[i].date,
+          'group_run_id' : json[i].group_run_id
 
 
-    }) ;
+
+
+        })
+      }
+      return return_data;
+    }
+  },
+  "columns"    : [
+    {'data': 'user'},
+    {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+    {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+    {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+    {'data': 'growth_rate'},
+    {'data': 'Category'},
+    {'data': 'date'},
+    {'data': 'group_run_id'}
+
+
+
+  ]
 });
+
 
 </script>

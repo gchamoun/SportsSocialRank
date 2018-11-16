@@ -4,6 +4,7 @@ class User extends CI_Controller {
       parent::__construct();
       $this->load->database();
        $this->load->helper('url_helper');
+       $this->load->model('User_model');
 
    }
 
@@ -28,6 +29,13 @@ $this->index($param);}
 
 
 
+    }
+    public function get_users()
+    {
+       $users = $this->User_model->getAllUsers();
+
+       echo json_encode($users);
+       exit();
     }
 
    public function get_team()
