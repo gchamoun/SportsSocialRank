@@ -1,4 +1,4 @@
-</br>     
+</br>
 <em>&copy; 2018</em>
         </body>
 
@@ -21,24 +21,24 @@ $(".line").peity("line");
 } );
 } );
     </script>
-    
+
     <script>
-    
+
     </script>
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#item-list').DataTable({     
+    $('#item-list').DataTable({
                 // This shows just the table,
                 "ajax": {
-            url : "/get_items",
+            url : "get_items",
             type : 'GET',
         },    responsive: true,
                 "deferRender": true,
-        
+
          paging: false,
                 "bAutoWidth": false,
         "order": [[ 0, "asc" ]]
-            
+
 
     }) ;
 });

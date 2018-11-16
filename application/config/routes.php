@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $route['item'] = "item/index";
-$route['get_items'] = "item/get_items";
+$route['get_items'] = "Item/get_items";
 $route['get_team'] = "user/get_team";
 
 $route['default_controller'] = 'pages/view';
