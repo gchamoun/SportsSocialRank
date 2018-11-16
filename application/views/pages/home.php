@@ -24,7 +24,7 @@
                                                     <th>Followers Today</th>
                                                     <th>Category</th>
 
-                                                    <th>Growth Rates</th>
+                                                    <th>Growth Rate</th>
 
 
 			</tr>
