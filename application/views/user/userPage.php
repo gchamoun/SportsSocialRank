@@ -52,7 +52,7 @@ responsive: true,
                 "bAutoWidth": false,
                 "ajax": {
         'type': 'POST',
-                url : "/get_team",
+                url : "get_team",
                         'data': {
            formName:  '<?php echo $team ?>',
                         }
