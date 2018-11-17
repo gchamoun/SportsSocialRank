@@ -1,12 +1,11 @@
 <html>
-   
+
         <head>
-            
-            
+
+
             <script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
 
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
 
 
             <!-- Latest compiled and minified CSS -->
@@ -21,8 +20,8 @@
 
                 <title>Sports Social Rank</title>
         </head>
-        
-            
+
+
            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-social-blue">
                <div class="container">
                <a class="navbar-brand" href="#"><img style="width:300px;" src="<?php echo base_url(); ?>assets/images/Logo.png"></a>
@@ -38,13 +37,13 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Teams</a>
       </li>
-      
-    
+
+
     </ul>
   </div>  </div>
-               
 
-</nav>    
-        
-        
+
+</nav>
+
+
         <body>

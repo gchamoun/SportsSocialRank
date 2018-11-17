@@ -12,6 +12,10 @@ class User extends CI_Controller {
                if($param=="get_team"){
            $this-> get_team();
         }
+        elseif($param=="get_team_chart"){
+          $this-> get_team_chart();
+
+        }
 else{
 $this->index($param);}
        }
@@ -38,13 +42,15 @@ $this->index($param);}
        exit();
     }
 
+
+//Ajax for Returning all data on a team
    public function get_team()
    {
       $draw = intval($this->input->get("draw"));
       $start = intval($this->input->get("start"));
       $length = intval($this->input->get("length"));
-if (isset($_POST['formName'])) {
-    $values = $_POST['formName'];
+if (isset($_POST['team'])) {
+    $team = $_POST['team'];
 
     // $login = $values['login'];
     // ...
@@ -52,9 +58,9 @@ if (isset($_POST['formName'])) {
 
 
             $query = $this->db->query("
-     SELECT * FROM twitter_archive where display_name = '" . $values ."'
+     SELECT * FROM twitter_archive where display_name = '" . $team ."'
             ORDER
-            BY date desc;");
+            BY date desc ;");
 
 
       $data = [];
@@ -94,4 +100,62 @@ $newfollowers,
       echo json_encode($result);
       exit();
    }
+
+
+   //Ajax for Returning all data on a team
+      public function get_team_chart()
+      {
+   if (isset($_POST['team'])) {
+       $team = $_POST['team'];
+
+       // $login = $values['login'];
+       // ...
+   }
+
+
+               $query = $this->db->query("
+        SELECT * FROM twitter_archive where display_name = '" . $team ."'
+               ORDER
+               BY date asc;");
+
+
+
+
+         $data = [];
+
+         $responce->cols[] = array(
+             "id" => "",
+             "label" => "Topping",
+             "pattern" => "",
+             "type" => "string"
+         );
+         $responce->cols[] = array(
+             "id" => "",
+             "label" => "followers",
+             "pattern" => "",
+             "type" => "number"
+         );
+
+
+
+         foreach($query->result() as $key => $r)
+             {
+               $responce->rows[]["c"] = array(
+
+                 array(
+                     "v" => "$r->date",
+                     "f" => null
+                 ) ,
+                 array(
+                     "v" => (int) $r->followers,
+                     "f" => null
+                 )
+             );
+             }
+
+
+
+         echo json_encode($responce);
+         exit();
+      }
 }

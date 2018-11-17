@@ -53,6 +53,7 @@ $route['get_latest'] = "Users/get_latest";
 
 $route['item'] = "item/index";
 $route['get_team'] = "user/get_team";
+$route['get_team_chart'] = "user/get_team_chart";
 
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';

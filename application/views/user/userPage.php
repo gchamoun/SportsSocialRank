@@ -54,7 +54,7 @@ responsive: true,
         'type': 'POST',
                 url : "get_team",
                         'data': {
-           formName:  '<?php echo $team ?>',
+           team:  '<?php echo $team ?>',
                         }
         },
                         "order": [[ 3, "desc" ]],

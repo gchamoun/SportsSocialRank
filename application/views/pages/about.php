@@ -1,73 +1,47 @@
-<html>
-<head>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
+<!DOCTYPE html>
+  <head>
+  <title>Google Chart and Codeigniter with MySQL</title>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
     google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawWeekChart);
-    google.charts.setOnLoadCallback(drawDayChart);
 
-    function drawWeekChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Year', 'Followers'],
-        ['11-12-18',  1000],
-        ['11-13-18',  1170],
-        ['11-14-18',  660],
-        ['11-15-18',  1030]
-      ]);
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
 
-      var options = {
-        title: 'Followers',
-        curveType: 'function',
-        legend: { position: 'bottom' }
-      };
+    function drawChart() {
+      var jsonData = $.ajax({
+           type: "POST",
+           url: "get_team_chart",
+           data: {
+               team: 'jaguars'
+           },
+           dataType:"json",          async: false
 
-      var chart = new google.visualization.LineChart(document.getElementById('week_chart'));
+          }).responseText;
 
-      chart.draw(data, options);
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(jsonData);
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, {width: 900, height: 500});
     }
 
+    </script>
+<style>
+h1 {
+    text-align: center;
+}
+</style>
+  </head>
 
-
-
-    function drawDayChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Year', 'Followers'],
-        ['8:00',  1000],
-        ['9:00',  1170],
-        ['10:00',  660],
-        ['11:00',  1030]
-      ]);
-
-      var options = {
-        title: 'Followers',
-        curveType: 'function',
-        legend: { position: 'bottom' }
-      };
-
-      var chart = new google.visualization.LineChart(document.getElementById('day_chart'));
-
-      chart.draw(data, options);
-    }
-
-
-
-
-  </script>
-
-
-
-
-
-
-
-
-
-
-</head>
-<body>
-  <h1>Followers growth by week</h1>
-  <div id="day_chart" style="width: 900px; height: 500px"></div>
-  <div id="week_chart" style="width: 900px; height: 500px"></div>
-
-</body>
+  <body>
+    <!--Div that will hold the pie chart-->
+    <h1>Quantity of fruits we have in our store - Displayed by Google Chart and Codeigniter with MySQL</h1>
+    <div id="chart_div"></div>
+  </body>
 </html>
