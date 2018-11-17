@@ -75,7 +75,7 @@ $currentGroupRunId = getLastGroupRunID();
 
 function getLastGroupRunID(){
 
- SELECT MAX(group_run_id) FROM sportssocialrank.twitter_archive;
+   $sql = "SELECT MAX(group_run_id) FROM sportssocialrank.twitter_archive";
  $row =  runQuery($sql, False);
    $lastGroupRunId = $row['MAX(group_run_id)'];
    $currentGroupRunId = $lastGroupRunId + 1;
@@ -148,10 +148,12 @@ insertTwitter($groupdId, $twitterInfo, $differenceInFollowers);
 //SQL Query: SELECT * FROM sportssocialrank.twitter_dbupdates;
 //Methods Called: RunQuery();
 ////-------------------------------------------------------------------------------
-function insertTwitterArchive($twitterInfo,$differenceInFollowers){
+function insertTwitterArchive($groupdId, $twitterInfo,$differenceInFollowers){
+  echo $twitterInfo->screen_name;
+
 $date = getDateTime();
-    $sql = "INSERT INTO twitter_archive (group_run_id, name,date, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
-        . "VALUES ('$groupdId, $twitterInfo->name','$date', '$twitterInfo->screen_name','$twitterInfo->followers_count','$twitterInfo->friends_count','$twitterInfo->profile_image_url','$twitterInfo->profile_banner_url','$differenceInFollowers')";
+    $sql = "INSERT INTO twitter_archive (group_run_id, name, date, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
+        . "VALUES ('$groupdId', '$twitterInfo->name','$date', '$twitterInfo->screen_name','$twitterInfo->followers_count','$twitterInfo->friends_count','$twitterInfo->profile_image_url','$twitterInfo->profile_banner_url','$differenceInFollowers')";
     runQuery($sql, True);
 
 }
