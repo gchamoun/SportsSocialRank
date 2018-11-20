@@ -63,6 +63,7 @@ function twitterApiRun(){
                 global $differenceInFollowers;
 
     $usersArray = getUsers($currentStartId,$currentEndId,$numUsers);
+addTwitterDbUpdate($dateTime, $currentEndId, $numUsers,$currentStartId);
 $currentGroupRunId = getLastGroupRunID();
     twitterAPI($currentGroupRunId, $usersArray,$dateTime);
 
@@ -75,10 +76,10 @@ $currentGroupRunId = getLastGroupRunID();
 
 function getLastGroupRunID(){
 
-   $sql = "SELECT MAX(group_run_id) FROM sportssocialrank.twitter_archive";
+   $sql = "SELECT MAX(id) FROM sportssocialrank.twitter_dbupdates";
  $row =  runQuery($sql, False);
-   $lastGroupRunId = $row['MAX(group_run_id)'];
-   $currentGroupRunId = $lastGroupRunId + 1;
+   $lastGroupRunId = $row['MAX(id)'];
+   $currentGroupRunId = $lastGroupRunId;
 return $currentGroupRunId;
 }
 
@@ -149,7 +150,6 @@ insertTwitter($groupdId, $twitterInfo, $differenceInFollowers);
 //Methods Called: RunQuery();
 ////-------------------------------------------------------------------------------
 function insertTwitterArchive($groupdId, $twitterInfo,$differenceInFollowers){
-  echo $twitterInfo->screen_name;
 
 $date = getDateTime();
     $sql = "INSERT INTO twitter_archive (group_run_id, name, date, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
@@ -168,29 +168,25 @@ $date = getDateTime();
 //Methods Called: RunQuery();
 ////-------------------------------------------------------------------------------
 function insertTwitter($groupdId, $twitterInfo,$differenceInFollowers){
-        echo $twitterInfo->screen_name;
 
  $sql =  "SELECT id FROM twitter WHERE display_name =  '".$twitterInfo->screen_name."';";
    $row =  runQuery($sql, False);
      $id = $row['id'];
      $date  = getDateTime();
-          echo ' ';
 
-     echo $id;
-     echo ' ';
-if($id == null){
+ if($id == null){
     $sql = "INSERT INTO twitter (group_run_id, name,date, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
         . "VALUES ('$groupdId','$twitterInfo->name','$date', '$twitterInfo->screen_name','$twitterInfo->followers_count','$twitterInfo->friends_count','$twitterInfo->profile_image_url','$twitterInfo->profile_banner_url','$differenceInFollowers')";
-echo($sql);
     runQuery($sql, True);
 }
 else{
 
-$sql = "UPDATE twitter SET name ='".$twitterInfo->name."',date='".$date."', display_name = '".$twitterInfo->screen_name."',followers ='".$twitterInfo->followers_count.
+$sql = "UPDATE twitter SET name ='".$twitterInfo->name."',date='".$date."',group_run_id='".$groupdId."', display_name = '".$twitterInfo->screen_name."',followers ='".$twitterInfo->followers_count.
        "', following ='".$twitterInfo->friends_count."' , profile_image_url ='".
         $twitterInfo->profile_image_url."' , profile_banner_url ='".$twitterInfo->profile_banner_url."', "
         . "followers_today_count ='".$differenceInFollowers."'
 WHERE display_name = '".$twitterInfo->screen_name."';";
+    runQuery($sql, True);
 
 }
 }
@@ -409,12 +405,11 @@ runQuery($sql,true);
 
 
 function runQuery($sql,$Insert){
-//        echo php_EOL;
-//
-//    echo $sql;
-//    echo php_EOL;
+
+   echo $sql . PHP_EOL;
     global $conn; // Now all instances where the function refers to $x will refer to the GLOBAL version of $x, **not** just $x inside the function itself
 $result = $conn->query($sql);
+
 if($Insert != True){
 $row = mysqli_fetch_array($result);
 return $row;
