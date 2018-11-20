@@ -6,7 +6,7 @@
             <script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
 
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
             <!-- Latest compiled and minified CSS -->
