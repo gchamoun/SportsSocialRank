@@ -41,7 +41,6 @@
 
 
 </div>
-<p>Last Run: </p>
 
 </body>
 

@@ -6,6 +6,7 @@
             <script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
 
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta meta name="viewport" content="width=device-width, initial-scale=1">
 
 
             <!-- Latest compiled and minified CSS -->
@@ -24,7 +25,7 @@
 
            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-social-blue">
                <div class="container">
-               <a class="navbar-brand" href="#"><img style="width:300px;" src="<?php echo base_url(); ?>assets/images/Logo.png"></a>
+               <a class="navbar-brand" href="/sportssocialrank"><img style="width:300px;" src="<?php echo base_url(); ?>assets/images/Logo.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -32,10 +33,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="<?php echo base_url();?>">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Teams</a>
+        <a class="nav-link" href="<?php echo base_url();?>users">Teams</a>
       </li>
 
 
