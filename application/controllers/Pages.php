@@ -1,7 +1,7 @@
 <?php
 class Pages extends CI_Controller {
- 
-    
+
+
 public function view($page = 'home')
 {
         if ( ! file_exists(APPPATH.'views/pages/'.$page.'.php'))
@@ -11,12 +11,16 @@ public function view($page = 'home')
         }
 
         $data['title'] = ucfirst($page); // Capitalize the first letter
-        $this->load->model('Leagues_model');
+        $this->load->model('DBUpdate_model');
+
+        $data['latestUpdate'] = $this->DBUpdate_model->latestUpdate();
+        $data['previousUpdate'] = $this->DBUpdate_model->previousUpdate();
+
+
         $this->load->view('templates/header', $data);
-        $data['leagues'] = $this->Leagues_model->leagues_name();
 
         $this->load->view('pages/'. $page, $data);
-        $this->load->view('templates/footer', $data);        
+        $this->load->view('templates/footer', $data);
 }
 
 public function user($name){

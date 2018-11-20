@@ -31,11 +31,17 @@
 		</thead>
 		<tbody>
 
-
 		</tbody>
 	</table>
-</div>
+  <?php
+  echo "latest update: ". date('h:i:s a m/d/Y', strtotime($latestUpdate));?>
+</br>
+  <?php
+  echo "previous update: ". date('h:i:s a m/d/Y', strtotime($previousUpdate));?>
 
+
+</div>
+<p>Last Run: </p>
 
 </body>
 
