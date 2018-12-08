@@ -1,0 +1,611 @@
+[17-Nov-2018 20:23:17 UTC] PHP Parse error:  syntax error, unexpected 'MAX' (T_STRING) in /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php on line 78
+[17-Nov-2018 20:24:21 UTC] PHP Parse error:  syntax error, unexpected 'MAX' (T_STRING) in /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php on line 78
+[17-Nov-2018 20:37:24 UTC] PHP Parse error:  syntax error, unexpected 'MAX' (T_STRING) in /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php on line 78
+[21-Nov-2018 06:05:57 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('273', Array, '2018-11-21 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[21-Nov-2018 06:13:24 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('274', Array, '2018-11-21 6:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[21-Nov-2018 06:17:09 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('275', Array, '2018-11-21 6:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[22-Nov-2018 06:08:48 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('370', Array, '2018-11-22 6:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[22-Nov-2018 06:12:04 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('369', Array, '2018-11-22 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[22-Nov-2018 06:17:22 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('371', Array, '2018-11-22 6:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[23-Nov-2018 04:14:34 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Operation timed out after 10001 milliseconds with 0 bytes received' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('458', Array, '2018-11-23 4:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[23-Nov-2018 06:16:07 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('466', Array, '2018-11-23 6:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[23-Nov-2018 06:16:18 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('465', Array, '2018-11-23 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[23-Nov-2018 06:16:23 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('467', Array, '2018-11-23 6:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[24-Nov-2018 06:11:32 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('562', Array, '2018-11-24 6:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[24-Nov-2018 06:12:16 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('561', Array, '2018-11-24 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[24-Nov-2018 06:17:50 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('563', Array, '2018-11-24 6:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[24-Nov-2018 21:48:16 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Operation timed out after 10001 milliseconds with 0 bytes received' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('625', Array, '2018-11-24 21:4...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[25-Nov-2018 01:15:11 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('638', Array, '2018-11-25 1:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[25-Nov-2018 06:14:36 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('658', Array, '2018-11-25 6:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[25-Nov-2018 06:14:38 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('657', Array, '2018-11-25 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[25-Nov-2018 06:16:04 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('659', Array, '2018-11-25 6:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[26-Nov-2018 06:13:56 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('752', Array, '2018-11-26 5:30...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[26-Nov-2018 06:15:06 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('754', Array, '2018-11-26 6:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[26-Nov-2018 06:16:43 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('753', Array, '2018-11-26 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[26-Nov-2018 06:17:24 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('755', Array, '2018-11-26 6:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[27-Nov-2018 06:10:26 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('850', Array, '2018-11-27 6:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[27-Nov-2018 06:13:06 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('849', Array, '2018-11-27 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[27-Nov-2018 06:13:11 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('848', Array, '2018-11-27 5:30...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[27-Nov-2018 06:16:33 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('851', Array, '2018-11-27 6:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[28-Nov-2018 06:13:23 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('946', Array, '2018-11-28 6:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[28-Nov-2018 06:15:02 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('945', Array, '2018-11-28 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[28-Nov-2018 06:16:29 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('947', Array, '2018-11-28 6:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[28-Nov-2018 06:17:11 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('944', Array, '2018-11-28 5:30...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[29-Nov-2018 06:11:12 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1041', Array, '2018-11-29 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[29-Nov-2018 06:11:12 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1039', Array, '2018-11-29 5:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[29-Nov-2018 06:13:10 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1042', Array, '2018-11-29 6:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[29-Nov-2018 06:15:56 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1043', Array, '2018-11-29 6:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[29-Nov-2018 06:18:21 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10001 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1040', Array, '2018-11-29 5:30...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[30-Nov-2018 06:14:09 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1135', Array, '2018-11-30 5:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[30-Nov-2018 06:15:11 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1139', Array, '2018-11-30 6:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[30-Nov-2018 06:16:31 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1137', Array, '2018-11-30 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[30-Nov-2018 06:17:20 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10001 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1138', Array, '2018-11-30 6:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[30-Nov-2018 06:19:59 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1136', Array, '2018-11-30 5:30...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[01-Dec-2018 01:52:41 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1213', Array, '2018-12-01 0:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[01-Dec-2018 06:14:07 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1232', Array, '2018-12-01 5:30...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[01-Dec-2018 06:14:07 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1233', Array, '2018-12-01 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[02-Dec-2018 06:12:02 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1329', Array, '2018-12-02 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[03-Dec-2018 06:12:03 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1426', Array, '2018-12-03 6:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[03-Dec-2018 06:12:08 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1422', Array, '2018-12-03 5:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[03-Dec-2018 06:17:42 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1424', Array, '2018-12-03 5:30...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[03-Dec-2018 06:22:02 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1425', Array, '2018-12-03 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[04-Dec-2018 06:07:04 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1520', Array, '2018-12-04 5:30...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[04-Dec-2018 06:08:31 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1519', Array, '2018-12-04 5:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[04-Dec-2018 06:13:09 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1521', Array, '2018-12-04 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[04-Dec-2018 06:16:45 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1518', Array, '2018-12-04 5:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[04-Dec-2018 06:17:03 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1522', Array, '2018-12-04 6:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[04-Dec-2018 06:17:13 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1523', Array, '2018-12-04 6:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[05-Dec-2018 06:12:29 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1613', Array, '2018-12-05 4:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[05-Dec-2018 06:12:29 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1618', Array, '2018-12-05 6:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[05-Dec-2018 06:12:39 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1614', Array, '2018-12-05 5:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[05-Dec-2018 06:12:39 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1615', Array, '2018-12-05 5:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[05-Dec-2018 06:13:07 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1616', Array, '2018-12-05 5:30...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[05-Dec-2018 06:14:14 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1617', Array, '2018-12-05 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[05-Dec-2018 06:15:49 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1619', Array, '2018-12-05 6:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[06-Dec-2018 06:07:09 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1711', Array, '2018-12-06 5:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[06-Dec-2018 06:12:03 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1713', Array, '2018-12-06 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[06-Dec-2018 06:12:03 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1714', Array, '2018-12-06 6:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[06-Dec-2018 06:12:08 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1709', Array, '2018-12-06 4:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[06-Dec-2018 06:12:08 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1712', Array, '2018-12-06 5:30...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[06-Dec-2018 06:20:21 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1715', Array, '2018-12-06 6:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[06-Dec-2018 06:20:21 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1710', Array, '2018-12-06 5:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[07-Dec-2018 06:08:27 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1807', Array, '2018-12-07 5:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[07-Dec-2018 06:13:10 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1810', Array, '2018-12-07 6:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[07-Dec-2018 06:15:20 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1805', Array, '2018-12-07 4:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[07-Dec-2018 06:18:40 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1811', Array, '2018-12-07 6:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[08-Dec-2018 06:12:07 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1902', Array, '2018-12-08 5:00...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[08-Dec-2018 06:14:28 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1903', Array, '2018-12-08 5:15...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[08-Dec-2018 06:16:44 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10000 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1900', Array, '2018-12-08 4:30...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
+[08-Dec-2018 06:17:05 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Resolving timed out after 10001 milliseconds' in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php:321
+Stack trace:
+#0 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(125): TwitterAPIExchange->performRequest()
+#1 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(68): twitterAPI('1905', Array, '2018-12-08 5:45...')
+#2 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(24): twitterApiRun()
+#3 /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php(17): run()
+#4 {main}
+  thrown in /home/sportssocialrank/public_html/html/SportsSocialRank/TwitterAPIExchange.php on line 321
