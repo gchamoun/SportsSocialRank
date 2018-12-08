@@ -9,6 +9,7 @@ public function view($page = 'home')
                 // Whoops, we don't have a page for that!
                 show_404();
         }
+        $this->load->helper('form');
 
         $data['title'] = ucfirst($page); // Capitalize the first letter
         $this->load->model('DBUpdate_model');
@@ -17,7 +18,7 @@ public function view($page = 'home')
         $data['previousUpdate'] = $this->DBUpdate_model->previousUpdate();
 
 
-        $this->load->view('templates/header', $data);
+        $this->load->view('templates/headerHome', $data);
 
         $this->load->view('pages/'. $page, $data);
         $this->load->view('templates/footer', $data);

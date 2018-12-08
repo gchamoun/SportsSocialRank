@@ -1,25 +1,21 @@
 <html>
-
-        <head>
-
-
-            <script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
-
+<head>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+            <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> -->
 
             <!-- Latest compiled and minified CSS -->
-                 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/header.css">
-                 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/stylesheets.css">
-
+      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/header.css">
+      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/stylesheets.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
 	   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 	     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.bootstrap.min.css">
 
 <!-- Latest compiled and minified JavaScript -->
+<title>Sports Social Rank</title>
+<?php
+echo link_tag('assets/css/bootstrap.min.css'); //this will call the css
 
-                <title>Sports Social Rank</title>
+                ?>
         </head>
 
 
