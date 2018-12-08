@@ -16,5 +16,13 @@ class Users extends CI_Controller {
        echo json_encode($users);
        exit();
     }
+    public function getTopFive($category)
+    {
+       $users = $this->Users_model->getTopFive($category);
+
+       echo json_encode($users);
+       exit();
+    }
+
 
 }
