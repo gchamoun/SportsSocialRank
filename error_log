@@ -646,3 +646,21 @@ Stack trace:
 [08-Dec-2018 21:02:35 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/sportssocialrank/public_html/html/SportsSocialRank/application/config/config.php on line 26
 [08-Dec-2018 16:00:01 America/Chicago] PHP Warning:  implode(): Invalid arguments passed in /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php on line 253
 [08-Dec-2018 16:00:01 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php on line 112
+[08-Dec-2018 16:15:01 America/Chicago] PHP Warning:  implode(): Invalid arguments passed in /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php on line 253
+[08-Dec-2018 16:15:01 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php on line 112
+[08-Dec-2018 22:15:30 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/sportssocialrank/public_html/html/SportsSocialRank/application/config/config.php on line 26
+[08-Dec-2018 22:15:35 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/sportssocialrank/public_html/html/SportsSocialRank/application/config/config.php on line 26
+[08-Dec-2018 22:18:09 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/sportssocialrank/public_html/html/SportsSocialRank/application/config/config.php on line 26
+[08-Dec-2018 22:18:10 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/sportssocialrank/public_html/html/SportsSocialRank/application/config/config.php on line 26
+[08-Dec-2018 22:18:11 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/sportssocialrank/public_html/html/SportsSocialRank/application/config/config.php on line 26
+[08-Dec-2018 22:18:11 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/sportssocialrank/public_html/html/SportsSocialRank/application/config/config.php on line 26
+[08-Dec-2018 22:18:17 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/sportssocialrank/public_html/html/SportsSocialRank/application/config/config.php on line 26
+[08-Dec-2018 22:18:18 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/sportssocialrank/public_html/html/SportsSocialRank/application/config/config.php on line 26
+[08-Dec-2018 22:18:18 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/sportssocialrank/public_html/html/SportsSocialRank/application/config/config.php on line 26
+[08-Dec-2018 22:18:18 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/sportssocialrank/public_html/html/SportsSocialRank/application/config/config.php on line 26
+[08-Dec-2018 22:18:19 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/sportssocialrank/public_html/html/SportsSocialRank/application/config/config.php on line 26
+[08-Dec-2018 22:18:19 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/sportssocialrank/public_html/html/SportsSocialRank/application/config/config.php on line 26
+[08-Dec-2018 22:18:20 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/sportssocialrank/public_html/html/SportsSocialRank/application/config/config.php on line 26
+[08-Dec-2018 22:18:51 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/sportssocialrank/public_html/html/SportsSocialRank/application/config/config.php on line 26
+[08-Dec-2018 16:30:01 America/Chicago] PHP Warning:  implode(): Invalid arguments passed in /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php on line 253
+[08-Dec-2018 16:30:01 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/sportssocialrank/public_html/html/SportsSocialRank/twitterFollowersUpdate.php on line 112
