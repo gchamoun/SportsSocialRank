@@ -67,274 +67,274 @@ $('#cfb-table').DataTable({
   "paging": false,
   "bInfo": false,
 
-  'ajax'       : {
-    "type"   : "Get",
-    "url"    : "users/gettopfive/cfb",
-
-    "dataSrc": function (json) {
-      var return_data = new Array();
-      for(var i=0;i< json.length; i++){
-        return_data.push({
-
-          'rank' : i+1,
-          'user':'<img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].display_name + '</div></a>',
-
-        'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
-          'followers' : json[i].followers,
-          'followers_today_count' : json[i].followers_today_count
-        })
-      }
-
-
-
-
-      return return_data;
-    }
-  },
-  "columns"    : [
-    {'data': 'rank'},
-    {'data': 'user'},
-    {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-    {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') }
-
-
-  ]
-});
-
-
-$('#nfl-table').DataTable({
-
-  "ordering": false,
-  "searching": false,
-  "lengthChange": false,
-  "paging": false,
-  "bInfo": false,
-
-  'ajax'       : {
-    "type"   : "Get",
-    "url"    : "users/gettopfive/nfl",
-
-    "dataSrc": function (json) {
-      var return_data = new Array();
-      for(var i=0;i< json.length; i++){
-        return_data.push({
-
-          'rank' : i+1,
-          'user':'<img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].display_name + '</div></a>',
-          'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
-          'followers' : json[i].followers,
-          'followers_today_count' : json[i].followers_today_count
-
-
-
-        })
-      }
-      return return_data;
-    }
-  },
-  "columns"    : [
-    {'data': 'rank'},
-    {'data': 'user'},
-    {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-    {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') }
-
-
-  ]
-});
-
-$('#nba-table').DataTable({
-
-  "ordering": false,
-  "searching": false,
-  "lengthChange": false,
-  "paging": false,
-  "bInfo": false,
-
-  'ajax'       : {
-    "type"   : "Get",
-    "url"    : "users/gettopfive/nba",
-
-    "dataSrc": function (json) {
-      var return_data = new Array();
-      for(var i=0;i< json.length; i++){
-        return_data.push({
-
-          'rank' : i+1,
-          'user':'<img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].display_name + '</div></a>',
-          'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
-          'followers' : json[i].followers,
-          'followers_today_count' : json[i].followers_today_count
-
-
-
-        })
-      }
-      return return_data;
-    }
-  },
-  "columns"    : [
-    {'data': 'rank'},
-    {'data': 'user'},
-    {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-    {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') }
-
-
-  ]
-});
-
-$('#premierleague-table').DataTable({
-  "ordering": false,
-  "searching": false,
-  "lengthChange": false,
-  "paging": false,
-  "bInfo": false,
-
-  'ajax'       : {
-    "type"   : "Get",
-    "url"    : "users/gettopfive/premierleague",
-
-    "dataSrc": function (json) {
-      var return_data = new Array();
-      for(var i=0;i< json.length; i++){
-        return_data.push({
-
-          'rank' : i+1,
-          'user':'<img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].display_name + '</div></a>',
-          'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
-          'followers' : json[i].followers,
-          'followers_today_count' : json[i].followers_today_count
-
-
-
-        })
-      }
-      return return_data;
-    }
-  },
-  "columns"    : [
-    {'data': 'rank'},
-    {'data': 'user'},
-    {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-    {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') }
-
-
-  ]
-});
-$('#nflplayers-table').DataTable({
-  "ordering": false,
-  "searching": false,
-  "lengthChange": false,
-  "paging": false,
-  "bInfo": false,
-
-  'ajax'       : {
-    "type"   : "Get",
-    "url"    : "users/gettopfive/nflplayers",
-
-    "dataSrc": function (json) {
-      var return_data = new Array();
-      for(var i=0;i< json.length; i++){
-        return_data.push({
-
-          'rank' : i+1,
-          'user':'<img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].display_name + '</div></a>',
-          'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
-          'followers' : json[i].followers,
-          'followers_today_count' : json[i].followers_today_count
-
-
-
-        })
-      }
-      return return_data;
-    }
-  },
-  "columns"    : [
-    {'data': 'rank'},
-    {'data': 'user'},
-    {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-    {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') }
-
-
-  ]
-});
-$('#mls-table').DataTable({
-  "ordering": false,
-  "searching": false,
-  "lengthChange": false,
-  "paging": false,
-  "bInfo": false,
-
-  'ajax'       : {
-    "type"   : "Get",
-    "url"    : "users/gettopfive/mls",
-
-    "dataSrc": function (json) {
-      var return_data = new Array();
-      for(var i=0;i< json.length; i++){
-        return_data.push({
-
-          'rank' : i+1,
-          'user':'<img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].display_name + '</div></a>',
-          'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
-          'followers' : json[i].followers,
-          'followers_today_count' : json[i].followers_today_count
-
-
-
-        })
-      }
-      return return_data;
-    }
-  },
-  "columns"    : [
-    {'data': 'rank'},
-    {'data': 'user'},
-    {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-    {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') }
-
-
-  ]
-});
-$('#mlb-table').DataTable({
-  "autoWidth": true,
-  "ordering": false,
-  "searching": false,
-  "lengthChange": false,
-  "paging": false,
-  "bInfo": false,
-
-  'ajax'       : {
-    "type"   : "Get",
-    "url"    : "users/gettopfive/MLB",
-
-    "dataSrc": function (json) {
-      var return_data = new Array();
-      for(var i=0;i< json.length; i++){
-        return_data.push({
-
-          'rank' : i+1,
-          'user':'<img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].display_name + '</div></a>',
-          'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
-          'followers' : json[i].followers,
-          'followers_today_count' : json[i].followers_today_count
-
-
-
-        })
-      }
-      return return_data;
-    }
-  },
-  "columns"    : [
-    {'data': 'rank'},
-    {'data': 'user'},
-    {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-    {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') }
-
-
-  ]
-});
+//   'ajax'       : {
+//     "type"   : "Get",
+//     "url"    : "users/gettopfive/cfb",
+//
+//     "dataSrc": function (json) {
+//       var return_data = new Array();
+//       for(var i=0;i< json.length; i++){
+//         return_data.push({
+//
+//           'rank' : i+1,
+//           'user':'<img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].display_name + '</div></a>',
+//
+//         'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+//           'followers' : json[i].followers,
+//           'followers_today_count' : json[i].followers_today_count
+//         })
+//       }
+//
+//
+//
+//
+//       return return_data;
+//     }
+//   },
+//   "columns"    : [
+//     {'data': 'rank'},
+//     {'data': 'user'},
+//     {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+//     {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') }
+//
+//
+//   ]
+// });
+//
+//
+// $('#nfl-table').DataTable({
+//
+//   "ordering": false,
+//   "searching": false,
+//   "lengthChange": false,
+//   "paging": false,
+//   "bInfo": false,
+//
+//   'ajax'       : {
+//     "type"   : "Get",
+//     "url"    : "users/gettopfive/nfl",
+//
+//     "dataSrc": function (json) {
+//       var return_data = new Array();
+//       for(var i=0;i< json.length; i++){
+//         return_data.push({
+//
+//           'rank' : i+1,
+//           'user':'<img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].display_name + '</div></a>',
+//           'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+//           'followers' : json[i].followers,
+//           'followers_today_count' : json[i].followers_today_count
+//
+//
+//
+//         })
+//       }
+//       return return_data;
+//     }
+//   },
+//   "columns"    : [
+//     {'data': 'rank'},
+//     {'data': 'user'},
+//     {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+//     {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') }
+//
+//
+//   ]
+// });
+//
+// $('#nba-table').DataTable({
+//
+//   "ordering": false,
+//   "searching": false,
+//   "lengthChange": false,
+//   "paging": false,
+//   "bInfo": false,
+//
+//   'ajax'       : {
+//     "type"   : "Get",
+//     "url"    : "users/gettopfive/nba",
+//
+//     "dataSrc": function (json) {
+//       var return_data = new Array();
+//       for(var i=0;i< json.length; i++){
+//         return_data.push({
+//
+//           'rank' : i+1,
+//           'user':'<img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].display_name + '</div></a>',
+//           'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+//           'followers' : json[i].followers,
+//           'followers_today_count' : json[i].followers_today_count
+//
+//
+//
+//         })
+//       }
+//       return return_data;
+//     }
+//   },
+//   "columns"    : [
+//     {'data': 'rank'},
+//     {'data': 'user'},
+//     {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+//     {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') }
+//
+//
+//   ]
+// });
+//
+// $('#premierleague-table').DataTable({
+//   "ordering": false,
+//   "searching": false,
+//   "lengthChange": false,
+//   "paging": false,
+//   "bInfo": false,
+//
+//   'ajax'       : {
+//     "type"   : "Get",
+//     "url"    : "users/gettopfive/premierleague",
+//
+//     "dataSrc": function (json) {
+//       var return_data = new Array();
+//       for(var i=0;i< json.length; i++){
+//         return_data.push({
+//
+//           'rank' : i+1,
+//           'user':'<img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].display_name + '</div></a>',
+//           'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+//           'followers' : json[i].followers,
+//           'followers_today_count' : json[i].followers_today_count
+//
+//
+//
+//         })
+//       }
+//       return return_data;
+//     }
+//   },
+//   "columns"    : [
+//     {'data': 'rank'},
+//     {'data': 'user'},
+//     {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+//     {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') }
+//
+//
+//   ]
+// });
+// $('#nflplayers-table').DataTable({
+//   "ordering": false,
+//   "searching": false,
+//   "lengthChange": false,
+//   "paging": false,
+//   "bInfo": false,
+//
+//   'ajax'       : {
+//     "type"   : "Get",
+//     "url"    : "users/gettopfive/nflplayers",
+//
+//     "dataSrc": function (json) {
+//       var return_data = new Array();
+//       for(var i=0;i< json.length; i++){
+//         return_data.push({
+//
+//           'rank' : i+1,
+//           'user':'<img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].display_name + '</div></a>',
+//           'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+//           'followers' : json[i].followers,
+//           'followers_today_count' : json[i].followers_today_count
+//
+//
+//
+//         })
+//       }
+//       return return_data;
+//     }
+//   },
+//   "columns"    : [
+//     {'data': 'rank'},
+//     {'data': 'user'},
+//     {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+//     {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') }
+//
+//
+//   ]
+// });
+// $('#mls-table').DataTable({
+//   "ordering": false,
+//   "searching": false,
+//   "lengthChange": false,
+//   "paging": false,
+//   "bInfo": false,
+//
+//   'ajax'       : {
+//     "type"   : "Get",
+//     "url"    : "users/gettopfive/mls",
+//
+//     "dataSrc": function (json) {
+//       var return_data = new Array();
+//       for(var i=0;i< json.length; i++){
+//         return_data.push({
+//
+//           'rank' : i+1,
+//           'user':'<img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].display_name + '</div></a>',
+//           'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+//           'followers' : json[i].followers,
+//           'followers_today_count' : json[i].followers_today_count
+//
+//
+//
+//         })
+//       }
+//       return return_data;
+//     }
+//   },
+//   "columns"    : [
+//     {'data': 'rank'},
+//     {'data': 'user'},
+//     {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+//     {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') }
+//
+//
+//   ]
+// });
+// $('#mlb-table').DataTable({
+//   "autoWidth": true,
+//   "ordering": false,
+//   "searching": false,
+//   "lengthChange": false,
+//   "paging": false,
+//   "bInfo": false,
+//
+//   'ajax'       : {
+//     "type"   : "Get",
+//     "url"    : "users/gettopfive/MLB",
+//
+//     "dataSrc": function (json) {
+//       var return_data = new Array();
+//       for(var i=0;i< json.length; i++){
+//         return_data.push({
+//
+//           'rank' : i+1,
+//           'user':'<img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].display_name + '</div></a>',
+//           'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+//           'followers' : json[i].followers,
+//           'followers_today_count' : json[i].followers_today_count
+//
+//
+//
+//         })
+//       }
+//       return return_data;
+//     }
+//   },
+//   "columns"    : [
+//     {'data': 'rank'},
+//     {'data': 'user'},
+//     {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+//     {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') }
+//
+//
+//   ]
+// });
 jQuery('.dataTable').wrap('<div class="dataTables_scroll" />');
 
 

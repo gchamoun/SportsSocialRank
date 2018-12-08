@@ -23,8 +23,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+<<<<<<< HEAD
 $config['base_url'] = 'http://sportssocialrank.com';
 // $config['base_url'] = 'http://192.168.1.213/';
+=======
+// $config['base_url'] = 'http://sportssocialrank.com';
+$config['base_url'] = 'http://192.168.1.213/';
+>>>>>>> f934a5975c8a479097c1ce9c954bae65a433bc70
 
 /*
 |--------------------------------------------------------------------------
