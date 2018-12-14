@@ -9,6 +9,9 @@ public function insertTwitterList(){
   $this->load->model('Accounts_model');
                     $this->Accounts_model->getTwitterList($slug, $owner_screen_name, $category);
 
+                    $this->load->view('dashboard/accounts', $data);
+
+
 }
 public function getAllAccounts(){
 
