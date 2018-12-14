@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'sportssocialrank.db.10366090.db2.hostedresource.net',
-	'username' => 'sportssocialrank',
-	'password' => 'LLRo1984!123',
+	'hostname' => '198.12.152.136:3306',
+	'username' => 'SportsSocialRank',
+	'password' => 'Mom9015222!',
 	'database' => 'sportssocialrank',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

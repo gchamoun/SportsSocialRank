@@ -12,10 +12,10 @@ public function view($page = 'home')
         $this->load->helper('form');
 
         $data['title'] = ucfirst($page); // Capitalize the first letter
-        $this->load->model('DBUpdate_model');
-
-        $data['latestUpdate'] = $this->DBUpdate_model->latestUpdate();
-        $data['previousUpdate'] = $this->DBUpdate_model->previousUpdate();
+        // $this->load->model('DBUpdate_model');
+        // 
+        // $data['latestUpdate'] = $this->DBUpdate_model->latestUpdate();
+        // $data['previousUpdate'] = $this->DBUpdate_model->previousUpdate();
 
 
         $this->load->view('templates/headerHome', $data);

@@ -33,6 +33,7 @@ class Auth extends CI_Controller
 
 		if (!$this->ion_auth->logged_in())
 		{
+
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
@@ -79,9 +80,9 @@ class Auth extends CI_Controller
 			if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember))
 			{
 				//if the login is successful
-				//redirect them back to the home page
+				//redirect to dashboard
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				redirect('/', 'refresh');
+				redirect('/dashboard', 'refresh');
 			}
 			else
 			{
@@ -141,6 +142,7 @@ class Auth extends CI_Controller
 		if (!$this->ion_auth->logged_in())
 		{
 			redirect('auth/login', 'refresh');
+
 		}
 
 		$user = $this->ion_auth->user()->row();

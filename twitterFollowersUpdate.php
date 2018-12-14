@@ -92,7 +92,7 @@ return $currentGroupRunId;
 function twitterAPI($groupdId, $usersArray,$dateTime){
     global $differenceInFollowers;
 
-    require_once('TwitterAPIExchange.php');
+    require_once(APPPATH.'libraries/TwitterAPIExchange.php');
 
 $settings = array(
 
@@ -150,12 +150,9 @@ insertTwitter($groupdId, $twitterInfo, $differenceInFollowers);
 //Methods Called: RunQuery();
 ////-------------------------------------------------------------------------------
 function insertTwitterArchive($groupdId, $twitterInfo,$differenceInFollowers){
-
-$date = getDateTime();
-    $sql = "INSERT INTO twitter_archive (group_run_id, name, date, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
-        . "VALUES ('$groupdId', '$twitterInfo->name','$date', '$twitterInfo->screen_name','$twitterInfo->followers_count','$twitterInfo->friends_count','$twitterInfo->profile_image_url','$twitterInfo->profile_banner_url','$differenceInFollowers')";
+$sql = "INSERT INTO twitter_data_archive (twitter_dbupdates_, name, date, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
+    . "VALUES ('$groupdId', '$twitterInfo->name','$date', '$twitterInfo->screen_name','$twitterInfo->followers_count','$twitterInfo->friends_count','$twitterInfo->profile_image_url','$twitterInfo->profile_banner_url','$differenceInFollowers')";
     runQuery($sql, True);
-
 }
 
 
@@ -169,19 +166,18 @@ $date = getDateTime();
 ////-------------------------------------------------------------------------------
 function insertTwitter($groupdId, $twitterInfo,$differenceInFollowers){
 
- $sql =  "SELECT id FROM twitter WHERE display_name =  '".$twitterInfo->screen_name."';";
+ $sql =  "SELECT id FROM twitter_data WHERE display_name =  '".$twitterInfo->screen_name."';";
    $row =  runQuery($sql, False);
      $id = $row['id'];
      $date  = getDateTime();
-
  if($id == null){
-    $sql = "INSERT INTO twitter (group_run_id, name,date, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
-        . "VALUES ('$groupdId','$twitterInfo->name','$date', '$twitterInfo->screen_name','$twitterInfo->followers_count','$twitterInfo->friends_count','$twitterInfo->profile_image_url','$twitterInfo->profile_banner_url','$differenceInFollowers')";
-    runQuery($sql, True);
+   $sql = "INSERT INTO twitter_data(twitter_dbupdates_, name, date, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
+       . "VALUES ('$groupdId', '$twitterInfo->name','$date', '$twitterInfo->screen_name','$twitterInfo->followers_count','$twitterInfo->friends_count','$twitterInfo->profile_image_url','$twitterInfo->profile_banner_url','$differenceInFollowers')";
+       runQuery($sql, True);
 }
 else{
 
-$sql = "UPDATE twitter SET name ='".$twitterInfo->name."',date='".$date."',group_run_id='".$groupdId."', display_name = '".$twitterInfo->screen_name."',followers ='".$twitterInfo->followers_count.
+$sql = "UPDATE twitter SET name ='".$twitterInfo->name."',date='".$date."',twitter_dbupdates_id='".$groupdId."', display_name = '".$twitterInfo->screen_name."',followers ='".$twitterInfo->followers_count.
        "', following ='".$twitterInfo->friends_count."' , profile_image_url ='".
         $twitterInfo->profile_image_url."' , profile_banner_url ='".$twitterInfo->profile_banner_url."', "
         . "followers_today_count ='".$differenceInFollowers."'
@@ -203,7 +199,7 @@ function getDayFollowerCount($followersAtCurrentTime,$teamDisplayName){
 
     $date = getDateShort();
 
-    $sql = "SELECT followers FROM twitter_archive WHERE date BETWEEN '".$date." 00:00:00' AND '". $date ." 23:59:59' and display_name= '". $teamDisplayName. "'  ORDER BY id ASC LIMIT 1;";
+    $sql = "SELECT followers FROM twitter_data_archive WHERE date BETWEEN '".$date." 00:00:00' AND '". $date ." 23:59:59' and display_name= '". $teamDisplayName. "'  ORDER BY id ASC LIMIT 1;";
     $row = runQuery($sql,false);
 $startOfDayFollowers = $row['followers'];
 
@@ -226,10 +222,10 @@ return $differenceInFollowers;
 function getUsers($currentStartId,$currentEndId,$numUsers){
     global $conn;
     if($currentEndId > $currentStartId){
-    $sql = "SELECT Twitter_username FROM users WHERE id BETWEEN ". $currentStartId . " and ". $currentEndId;
+    $sql = "SELECT screen_name FROM twitter_accounts WHERE id BETWEEN ". $currentStartId . " and ". $currentEndId;
     }
     else{
-     $sql = "SELECT Twitter_username FROM users WHERE (id BETWEEN ". $currentStartId . " and ". $numUsers . ") AND (id BETWEEN 1 and ". $currentEndId . ")";
+     $sql = "SELECT screen_name FROM twitter_accounts WHERE (id BETWEEN ". $currentStartId . " and ". $numUsers . ") AND (id BETWEEN 1 and ". $currentEndId . ")";
 
     }
 
@@ -260,9 +256,9 @@ function db () {
 global $conn;
 
 $usersArray = array();
-$servername = "sportssocialrank.db.10366090.db2.hostedresource.net";
+$servername = "198.12.152.136:3306";
 $username = "sportssocialrank";
-$password = "LLRo1984!123";
+$password = "Mom9015222!";
 $dbname = "sportssocialrank";
 
 // Create connection
@@ -283,7 +279,7 @@ if ($conn->connect_error) {
 ////-------------------------------------------------------------------------------
 
 function getNumUsers(){
-$sql = "SELECT COUNT(*) FROM users;";
+$sql = "SELECT COUNT(*) FROM twitter_accounts;";
 $row = runQuery($sql,false);
 $numUsers = $row['COUNT(*)'];
 return $numUsers;
@@ -317,7 +313,7 @@ $date = date('Y-m-d');
 function getLastRunEndId(){
 $sql = "SELECT * FROM sportssocialrank.twitter_dbupdates;";
 $row = runQuery($sql,false);
-$endId = $row['endId'];
+$endId = $row['end_Id'];
 return $endId;
 }
 
@@ -396,7 +392,7 @@ function getEndId($LastRunEndId,$numUsers,$currentStartId){
 
 function addTwitterDbUpdate($dateTime, $currentEndId, $numUsers,$currentStartId){
 
-$sql = "INSERT INTO twitter_dbupdates (date, startId, endId, totalUsers)" . "VALUES "
+$sql = "INSERT INTO twitter_dbupdates (date, start_id, end_id, total_users)" . "VALUES "
         . "('$dateTime','$currentStartId', '$currentEndId','$numUsers')";
 runQuery($sql,true);
 
