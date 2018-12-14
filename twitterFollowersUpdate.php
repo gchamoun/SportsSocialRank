@@ -125,7 +125,7 @@ $json =  $twitter->setGetfield($getfield)
                  ->performRequest();
 
 $twitterInfo = json_decode($json);
-
+print_r($twitterInfo);
 $teamDisplayName = $twitterInfo->screen_name;
 
 $followersAtCurrentTime = $twitterInfo->followers_count;
