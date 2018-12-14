@@ -257,7 +257,7 @@ global $conn;
 
 $usersArray = array();
 $servername = "198.12.152.136:3306";
-$username = "sportssocialrank";
+$username = "SportsSocialRank";
 $password = "Mom9015222!";
 $dbname = "sportssocialrank";
 
