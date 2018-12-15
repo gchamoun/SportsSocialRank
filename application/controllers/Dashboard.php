@@ -22,7 +22,9 @@ $this->ion_auth->user();
 }
 else{
 
-        $this->load->view('members/dashboard');
+  $this->load->view('admin/header');
+
+  $this->load->view('admin/dashboard');
     }}
       else{
         echo 'You are NOT Logged in';
@@ -41,7 +43,9 @@ else{
 }
 else{
 
-        $this->load->view('members/dashboard');
+  $this->load->view('admin/header');
+
+  $this->load->view('admin/accounts');
     }}
       else{
         echo 'You are NOT Logged in';
