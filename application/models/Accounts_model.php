@@ -80,7 +80,9 @@ $accountId = $this->accountExist($accountName);
 
 //Add Category to Account
 $categoryAccountId = $this->Category_model->addNewAccountCategory($accountId, $categoryId);
-echo $categoryAccountId;
+
+//Add ALL CATEGORY
+$categoryAccountId = $this->Category_model->addNewAccountCategory($accountId, 1);
 
 //Add Account to Twitter Accounts
 
