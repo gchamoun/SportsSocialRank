@@ -66,6 +66,7 @@ function twitterApiRun(){
     $usersArray = getUsers($currentStartId,$currentEndId,$numUsers);
 addTwitterDbUpdate($dateTime, $currentEndId, $numUsers,$currentStartId);
 $currentGroupRunId = getLastGroupRunID();
+echo $currentGroupRunId;
     twitterAPI($currentGroupRunId, $usersArray,$dateTime);
     insertTwitterRank();
 
@@ -187,8 +188,6 @@ function insertTwitter($groupdId, $twitterInfo,$differenceInFollowers){
    $sql = "INSERT INTO twitter_data(twitter_accounts_id, twitter_dbupdates_id, name, date, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
        . "VALUES ('$accounts_id','$groupdId', '$twitterInfo->name','$date', '$twitterInfo->screen_name','$twitterInfo->followers_count','$twitterInfo->friends_count','$twitterInfo->profile_image_url','$twitterInfo->profile_banner_url','$differenceInFollowers')";
        runQuery($sql, True);
-       echo $sql;
-echo "</br";
 }
 else{
 
@@ -221,7 +220,6 @@ function insertTwitterRank(){
       }
       foreach ($categoryIdList as $categoryId) {
       $sql =  "SELECT  DISTINCT  a.followers,a.name,a.twitter_accounts_id, b.category_details_id, a.twitter_dbupdates_id       FROM twitter_data a, accounts_category b, twitter_accounts c       WHERE a.twitter_accounts_id = c.id and category_details_id = '".$categoryId."' ORDER BY followers DESC LIMIT 0, 5000";
-echo $sql;
       $result = $conn->query($sql);
       $i = 0;
       while($row = $result->fetch_assoc()) {
@@ -232,8 +230,6 @@ echo $sql;
 
           $sql = "INSERT INTO twitter_rank (rank, twitter_accounts_id, twitter_dbupdates_id, category_details_id)" . "VALUES "
                   . "('$i','$twitterAccounts_id', '$twitter_dbupdates_id','$categoryId')";
-                  echo $sql;
-        echo "</br>";
 
           runQuery($sql,true);
       }
@@ -286,7 +282,6 @@ function getUsers($currentStartId,$currentEndId,$numUsers){
       $sql = "SELECT screen_name FROM twitter_accounts";
 
     $result = $conn->query($sql);
-    echo $sql;
 if ($result->num_rows > 0) {
 
     while($row = $result->fetch_assoc()) {
@@ -296,7 +291,6 @@ if ($result->num_rows > 0) {
 
 } else {
 
-    echo "0 results";
 
 }
 
