@@ -197,7 +197,8 @@ $sql = "UPDATE twitter SET name ='".$twitterInfo->name."',date='".$date."',twitt
         . "followers_today_count ='".$differenceInFollowers."'
 WHERE display_name = '".$twitterInfo->screen_name."';";
     runQuery($sql, True);
-
+echo $sql;
+exit();
 }
 }
 
