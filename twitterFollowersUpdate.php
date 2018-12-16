@@ -194,7 +194,7 @@ function insertTwitter($groupdId, $twitterInfo,$differenceInFollowers){
 }
 else{
 
-$sql = "UPDATE twitter SET name ='".$twitterInfo->name."',date='".$date."',twitter_dbupdates_id='".$groupdId."', display_name = '".$twitterInfo->screen_name."',followers ='".$twitterInfo->followers_count.
+$sql = "UPDATE twitter_data SET name ='".$twitterInfo->name."',date='".$date."',twitter_dbupdates_id='".$groupdId."', display_name = '".$twitterInfo->screen_name."',followers ='".$twitterInfo->followers_count.
        "', following ='".$twitterInfo->friends_count."' , profile_image_url ='".
         $twitterInfo->profile_image_url."' , profile_banner_url ='".$twitterInfo->profile_banner_url."', "
         . "followers_today_count ='".$differenceInFollowers."'
