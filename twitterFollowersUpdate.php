@@ -66,7 +66,6 @@ function twitterApiRun(){
     $usersArray = getUsers($currentStartId,$currentEndId,$numUsers);
 addTwitterDbUpdate($dateTime, $currentEndId, $numUsers,$currentStartId);
 $currentGroupRunId = getLastGroupRunID();
-echo $currentGroupRunId;
     twitterAPI($currentGroupRunId, $usersArray,$dateTime);
     insertTwitterRank();
 
@@ -198,8 +197,6 @@ $sql = "UPDATE twitter_data SET name ='".$twitterInfo->name."',date='".$date."',
         . "followers_today_count ='".$differenceInFollowers."'
 WHERE display_name = '".$twitterInfo->screen_name."';";
     runQuery($sql, True);
-echo $sql;
-exit();
 }
 }
 
