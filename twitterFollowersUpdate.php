@@ -18,11 +18,11 @@ run();
 
 
 
-function run (){
-twitterDBRunInfo();
+function run()
+{
+    twitterDBRunInfo();
 
-twitterApiRun();
-
+    twitterApiRun();
 }
 
 ////-------------------------------------------------------------------------------
@@ -34,41 +34,41 @@ twitterApiRun();
 //$dateTime - Current date and time. $LastRunEndId - Where the last run ended.
 ////-------------------------------------------------------------------------------
 
-function twitterDBRunInfo (){
+function twitterDBRunInfo()
+{
     global $currentStartId;
-        global $currentEndId;
-        global $dateTime;
-        global $numUsers;
-        global $categoryList;
+    global $currentEndId;
+    global $dateTime;
+    global $numUsers;
+    global $categoryList;
 
-        $LastRunEndId;
-        $numUsers;
+    $LastRunEndId;
+    $numUsers;
 
 
 
-$conn = db();
- $numUsers = getNumUsers();
-$dateTime = getDateTime();
-$LastRunEndId = getLastRunEndId();
-$currentStartId = getStartId($LastRunEndId, $numUsers);
-$currentEndId = getEndId($LastRunEndId, $numUsers, $currentStartId);
-
+    $conn = db();
+    $numUsers = getNumUsers();
+    $dateTime = getDateTime();
+    $LastRunEndId = getLastRunEndId();
+    $currentStartId = getStartId($LastRunEndId, $numUsers);
+    $currentEndId = getEndId($LastRunEndId, $numUsers, $currentStartId);
 }
 
-function twitterApiRun(){
-        global $currentStartId;
-        global $currentEndId;
-           global $numUsers;
-        global $dateTime;
-        global $conn;
-                global $differenceInFollowers;
+function twitterApiRun()
+{
+    global $currentStartId;
+    global $currentEndId;
+    global $numUsers;
+    global $dateTime;
+    global $conn;
+    global $differenceInFollowers;
 
-    $usersArray = getUsers($currentStartId,$currentEndId,$numUsers);
-addTwitterDbUpdate($dateTime, $currentEndId, $numUsers,$currentStartId);
-$currentGroupRunId = getLastGroupRunID();
-    twitterAPI($currentGroupRunId, $usersArray,$dateTime);
-    insertTwitterRank();
-
+    $usersArray = getUsers($currentStartId, $currentEndId, $numUsers);
+    addTwitterDbUpdate($dateTime, $currentEndId, $numUsers, $currentStartId);
+    $currentGroupRunId = getLastGroupRunID();
+    twitterAPI($currentGroupRunId, $usersArray, $dateTime);
+    insertTwitterRank($currentGroupRunId);
 }
 ////-------------------------------------------------------------------------------
 //Name: getLasGroupRunID
@@ -76,13 +76,13 @@ $currentGroupRunId = getLastGroupRunID();
 //Methods Called: RunQuery();
 ////-------------------------------------------------------------------------------
 
-function getLastGroupRunID(){
-
-   $sql = "SELECT MAX(id) FROM sportssocialrank.twitter_dbupdates";
- $row =  runQuery($sql, False);
-   $lastGroupRunId = $row['MAX(id)'];
-   $currentGroupRunId = $lastGroupRunId;
-return $currentGroupRunId;
+function getLastGroupRunID()
+{
+    $sql = "SELECT MAX(id) FROM sportssocialrank.twitter_dbupdates";
+    $row =  runQuery($sql, false);
+    $lastGroupRunId = $row['MAX(id)'];
+    $currentGroupRunId = $lastGroupRunId;
+    return $currentGroupRunId;
 }
 
 
@@ -91,12 +91,13 @@ return $currentGroupRunId;
 //Description: Starts calling the twitter API
 //Methods Called: RunQuery();
 ////-------------------------------------------------------------------------------
-function twitterAPI($groupdId, $usersArray,$dateTime){
+function twitterAPI($groupdId, $usersArray, $dateTime)
+{
     global $differenceInFollowers;
 
     require_once('TwitterAPIExchange.php');
 
-$settings = array(
+    $settings = array(
 
 'oauth_access_token' => "562520337-IWHslct3vqnZq9DPLHKKF7xlYrQrf5Nolatbm52T",
 
@@ -112,36 +113,29 @@ $settings = array(
     $requestMethod = 'GET';
 
 
-foreach ($usersArray as &$team) {
-$getfield = "?screen_name=".$team;
+    foreach ($usersArray as &$team) {
+        $getfield = "?screen_name=".$team;
 
-$url = 'https://api.twitter.com/1.1/users/show.json';
+        $url = 'https://api.twitter.com/1.1/users/show.json';
 
-$requestMethod = 'GET';
+        $requestMethod = 'GET';
 
-$twitter = new TwitterAPIExchange($settings);
+        $twitter = new TwitterAPIExchange($settings);
 
-$json =  $twitter->setGetfield($getfield)
+        $json =  $twitter->setGetfield($getfield)
 
                  ->buildOauth($url, $requestMethod)
 
                  ->performRequest();
 
-$twitterInfo = json_decode($json);
-$teamDisplayName = $twitterInfo->screen_name;
-$followersAtCurrentTime = $twitterInfo->followers_count;
-$differenceInFollowers = getDayFollowerCount($followersAtCurrentTime,$teamDisplayName);
-insertTwitterArchive($groupdId, $twitterInfo,$differenceInFollowers );
-insertTwitter($groupdId, $twitterInfo, $differenceInFollowers);
-
-}
-
-
-
-
-
-
+        $twitterInfo = json_decode($json);
+        $teamDisplayName = $twitterInfo->screen_name;
+        $followersAtCurrentTime = $twitterInfo->followers_count;
+        $differenceInFollowers = getDayFollowerCount($followersAtCurrentTime, $teamDisplayName);
+        insertTwitterArchive($groupdId, $twitterInfo, $differenceInFollowers);
+        insertTwitter($groupdId, $twitterInfo, $differenceInFollowers);
     }
+}
 
 
 ////-------------------------------------------------------------------------------
@@ -150,17 +144,16 @@ insertTwitter($groupdId, $twitterInfo, $differenceInFollowers);
 //SQL Query: SELECT * FROM sportssocialrank.twitter_dbupdates;
 //Methods Called: RunQuery();
 ////-------------------------------------------------------------------------------
-function insertTwitterArchive($groupdId, $twitterInfo,$differenceInFollowers){
+function insertTwitterArchive($groupdId, $twitterInfo, $differenceInFollowers)
+{
+    $sql = 'SELECT id FROM twitter_accounts where screen_name ="'.$twitterInfo->screen_name.'"';
+    $row = runQuery($sql, false);
+    $accounts_id = $row['id'];
 
-$sql = 'SELECT id FROM twitter_accounts where screen_name ="'.$twitterInfo->screen_name.'"';
-$row = runQuery($sql,false);
-$accounts_id = $row['id'];
 
-
-$sql = "INSERT INTO twitter_data_archive (twitter_accounts_id, twitter_dbupdates_id, name, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
+    $sql = "INSERT INTO twitter_data_archive (twitter_accounts_id, twitter_dbupdates_id, name, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
     . "VALUES ('$accounts_id','$groupdId', '$twitterInfo->name','$twitterInfo->screen_name','$twitterInfo->followers_count','$twitterInfo->friends_count','$twitterInfo->profile_image_url','$twitterInfo->profile_banner_url','$differenceInFollowers')";
-    runQuery($sql, True);
-
+    runQuery($sql, true);
 }
 
 
@@ -173,31 +166,28 @@ $sql = "INSERT INTO twitter_data_archive (twitter_accounts_id, twitter_dbupdates
 //SQL Query: SELECT * FROM sportssocialrank.twitter_dbupdates;
 //Methods Called: RunQuery();
 ////-------------------------------------------------------------------------------
-function insertTwitter($groupdId, $twitterInfo,$differenceInFollowers){
+function insertTwitter($groupdId, $twitterInfo, $differenceInFollowers)
+{
+    $sql =  "SELECT id FROM twitter_data WHERE display_name =  '".$twitterInfo->screen_name."';";
+    $row =  runQuery($sql, false);
+    $id = $row['id'];
+    $date  = getDateTime();
+    if ($id == null) {
+        $sql = 'SELECT id FROM twitter_accounts where screen_name ="'.$twitterInfo->screen_name.'"';
+        $row = runQuery($sql, false);
+        $accounts_id = $row['id'];
 
- $sql =  "SELECT id FROM twitter_data WHERE display_name =  '".$twitterInfo->screen_name."';";
-   $row =  runQuery($sql, False);
-     $id = $row['id'];
-     $date  = getDateTime();
- if($id == null){
-   $sql = 'SELECT id FROM twitter_accounts where screen_name ="'.$twitterInfo->screen_name.'"';
-   $row = runQuery($sql,false);
-   $accounts_id = $row['id'];
-
-   $sql = "INSERT INTO twitter_data(twitter_accounts_id, twitter_dbupdates_id, name, date, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
+        $sql = "INSERT INTO twitter_data(twitter_accounts_id, twitter_dbupdates_id, name, date, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
        . "VALUES ('$accounts_id','$groupdId', '$twitterInfo->name','$date', '$twitterInfo->screen_name','$twitterInfo->followers_count','$twitterInfo->friends_count','$twitterInfo->profile_image_url','$twitterInfo->profile_banner_url','$differenceInFollowers')";
-       runQuery($sql, True);
-
-}
-else{
-
-$sql = "UPDATE twitter_data SET name ='".$twitterInfo->name."',date='".$date."',twitter_dbupdates_id='".$groupdId."', display_name = '".$twitterInfo->screen_name."',followers ='".$twitterInfo->followers_count.
+        runQuery($sql, true);
+    } else {
+        $sql = "UPDATE twitter_data SET name ='".$twitterInfo->name."',date='".$date."',twitter_dbupdates_id='".$groupdId."', display_name = '".$twitterInfo->screen_name."',followers ='".$twitterInfo->followers_count.
        "', following ='".$twitterInfo->friends_count."' , profile_image_url ='".
         $twitterInfo->profile_image_url."' , profile_banner_url ='".$twitterInfo->profile_banner_url."', "
         . "followers_today_count ='".$differenceInFollowers."'
 WHERE display_name = '".$twitterInfo->screen_name."';";
-    runQuery($sql, True);
-}
+        runQuery($sql, true);
+    }
 }
 
 ////-------------------------------------------------------------------------------
@@ -206,37 +196,42 @@ WHERE display_name = '".$twitterInfo->screen_name."';";
 //SQL Query: SELECT * FROM sportssocialrank.twitter_dbupdates;
 //Methods Called: RunQuery();
 ////-------------------------------------------------------------------------------
-function insertTwitterRank(){
-  global $conn;
-  global $categoryIdList;
+function insertTwitterRank($currentGroupRunId)
+{
+    global $conn;
+    global $categoryIdList;
 
-  $sql =  "SELECT id FROM sportssocialrank.category_details";
-  $result = $conn->query($sql);
-
-  if ($result->num_rows > 0) {
-      while($row = $result->fetch_assoc()) {
-          $categoryIdList[] = $row['id'];
-      }
-      foreach ($categoryIdList as $categoryId) {
-      $sql =  "SELECT  DISTINCT  a.followers,a.name,a.twitter_accounts_id, b.category_details_id, a.twitter_dbupdates_id       FROM twitter_data a, accounts_category b, twitter_accounts c       WHERE a.twitter_accounts_id = c.id and category_details_id = '".$categoryId."' ORDER BY followers DESC LIMIT 0, 5000";
-      $result = $conn->query($sql);
-      $i = 0;
-      while($row = $result->fetch_assoc()) {
-        $i++;
-          $categoryId = $row['category_details_id'];
-          $twitterAccounts_id = $row['twitter_accounts_id'];
-          $twitter_dbupdates_id = $row['twitter_dbupdates_id'];
-
-          $sql = "INSERT INTO twitter_rank (rank, twitter_accounts_id, twitter_dbupdates_id, category_details_id)" . "VALUES "
-                  . "('$i','$twitterAccounts_id', '$twitter_dbupdates_id','$categoryId')";
-
-          runQuery($sql,true);
-      }
-
-}
+    $sql =  "SELECT id FROM sportssocialrank.category_details";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $categoryIdList[] = $row['id'];
+        }
 
 
-}
+        foreach ($categoryIdList as $categoryId) {
+            $sql = "SELECT  twitter_data.twitter_accounts_id FROM accounts
+                    INNER JOIN accounts_category ON accounts.id = accounts_category.accounts_id
+                    INNER JOIN category_details ON category_details.id = accounts_category.category_details_id
+                    INNER JOIN twitter_accounts ON twitter_accounts.accounts_id = accounts.id
+                    INNER JOIN twitter_data ON twitter_data.twitter_accounts_id = twitter_accounts.accounts_id
+                    where accounts_category.category_details_id ='".$categoryId."' ORDER BY followers DESC LIMIT 0, 5000";
+            echo $sql;
+            echo "</br>";
+            $result = $conn->query($sql);
+            $i = 0;
+            while ($row = $result->fetch_assoc()) {
+                $i++;
+                $twitterAccounts_id = $row['twitter_accounts_id'];
+                $sql = "INSERT INTO twitter_rank (rank, twitter_accounts_id, twitter_dbupdates_id, category_details_id)" . "VALUES "
+                  . "('$i','$twitterAccounts_id', '$currentGroupRunId','$categoryId')";
+                echo $sql;
+                echo "</br>";
+
+                runQuery($sql, true);
+            }
+        }
+    }
 }
 ////-------------------------------------------------------------------------------
 //Name: getDayFollowerCount
@@ -244,21 +239,19 @@ function insertTwitterRank(){
 //SQL Query: SELECT * FROM sportssocialrank.twitter_dbupdates;
 //Methods Called: RunQuery();
 ////-------------------------------------------------------------------------------
-function getDayFollowerCount($followersAtCurrentTime,$teamDisplayName){
-
-
+function getDayFollowerCount($followersAtCurrentTime, $teamDisplayName)
+{
     $date = getDateShort();
 
     $sql = "SELECT followers FROM twitter_data_archive WHERE date BETWEEN '".$date." 00:00:00' AND '". $date ." 23:59:59' and display_name= '". $teamDisplayName. "'  ORDER BY id ASC LIMIT 1;";
-    $row = runQuery($sql,false);
-$startOfDayFollowers = $row['followers'];
+    $row = runQuery($sql, false);
+    $startOfDayFollowers = $row['followers'];
 
-if($startOfDayFollowers== null){
-
-    return null;
-}
-$differenceInFollowers = $followersAtCurrentTime -$startOfDayFollowers;
-return $differenceInFollowers;
+    if ($startOfDayFollowers== null) {
+        return null;
+    }
+    $differenceInFollowers = $followersAtCurrentTime -$startOfDayFollowers;
+    return $differenceInFollowers;
 }
 
 
@@ -269,52 +262,46 @@ return $differenceInFollowers;
 //Methods Called: RunQuery();
 ////-------------------------------------------------------------------------------
 
-function getUsers($currentStartId,$currentEndId,$numUsers){
+function getUsers($currentStartId, $currentEndId, $numUsers)
+{
     global $conn;
 
-      $sql = "SELECT MIN(id) FROM sportssocialrank.twitter_accounts";
-    $row =  runQuery($sql, False);
-      $minId = $row['MIN(id)'];
-      $sql = "SELECT MAX(id) FROM sportssocialrank.twitter_accounts";
-    $row =  runQuery($sql, False);
-      $maxId = $row['MAX(id)'];
-      $sql = "SELECT screen_name FROM twitter_accounts";
+    $sql = "SELECT MIN(id) FROM sportssocialrank.twitter_accounts";
+    $row =  runQuery($sql, false);
+    $minId = $row['MIN(id)'];
+    $sql = "SELECT MAX(id) FROM sportssocialrank.twitter_accounts";
+    $row =  runQuery($sql, false);
+    $maxId = $row['MAX(id)'];
+    $sql = "SELECT screen_name FROM twitter_accounts";
 
     $result = $conn->query($sql);
-if ($result->num_rows > 0) {
-
-    while($row = $result->fetch_assoc()) {
-
-        $usersArray[] = $row['screen_name'];
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $usersArray[] = $row['screen_name'];
+        }
+    } else {
     }
 
-} else {
-
-
-}
-
-$str = implode (", ", $usersArray);
-return $usersArray;
-
+    $str = implode(", ", $usersArray);
+    return $usersArray;
 }
 
 
-function db () {
-global $conn;
+function db()
+{
+    global $conn;
 
-$usersArray = array();
-$servername = "198.12.152.136:3306";
-$username = "SportsSocialRank";
-$password = "Mom9015222!";
-$dbname = "sportssocialrank";
+    $usersArray = array();
+    $servername = "198.12.152.136:3306";
+    $username = "SportsSocialRank";
+    $password = "Mom9015222!";
+    $dbname = "sportssocialrank";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-
-    die("Connection failed: " . $conn->connect_error);
-
-}
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
     return $conn;
 }
 
@@ -325,11 +312,12 @@ if ($conn->connect_error) {
 //Methods Called: RunQuery();
 ////-------------------------------------------------------------------------------
 
-function getNumUsers(){
-$sql = "SELECT COUNT(*) FROM twitter_accounts;";
-$row = runQuery($sql,false);
-$numUsers = $row['COUNT(*)'];
-return $numUsers;
+function getNumUsers()
+{
+    $sql = "SELECT COUNT(*) FROM twitter_accounts;";
+    $row = runQuery($sql, false);
+    $numUsers = $row['COUNT(*)'];
+    return $numUsers;
 }
 
 
@@ -338,17 +326,19 @@ return $numUsers;
 //Description: Gets Current date aand time in this format '2018-10-19 15:03:19'
 ////-------------------------------------------------------------------------------
 
-function getDateTime(){
-date_default_timezone_set('America/Chicago');
-$dateTime = date('Y-m-d G:i:s', time());
-  return $dateTime;
+function getDateTime()
+{
+    date_default_timezone_set('America/Chicago');
+    $dateTime = date('Y-m-d G:i:s', time());
+    return $dateTime;
 }
 
 
-function getDateShort(){
-date_default_timezone_set('America/Chicago');
-$date = date('Y-m-d');
-  return $date;
+function getDateShort()
+{
+    date_default_timezone_set('America/Chicago');
+    $date = date('Y-m-d');
+    return $date;
 }
 ////-------------------------------------------------------------------------------
 //Name: getLastRunEndId
@@ -357,11 +347,12 @@ $date = date('Y-m-d');
 //Methods Called: RunQuery();
 ////-------------------------------------------------------------------------------
 
-function getLastRunEndId(){
-$sql = "SELECT * FROM sportssocialrank.twitter_dbupdates;";
-$row = runQuery($sql,false);
-$endId = $row['end_id'];
-return $endId;
+function getLastRunEndId()
+{
+    $sql = "SELECT * FROM sportssocialrank.twitter_dbupdates;";
+    $row = runQuery($sql, false);
+    $endId = $row['end_id'];
+    return $endId;
 }
 
 ////-------------------------------------------------------------------------------
@@ -371,31 +362,29 @@ return $endId;
 ////-------------------------------------------------------------------------------
 
 
-function getStartId($LastRunEndId,$numUsers){
+function getStartId($LastRunEndId, $numUsers)
+{
 
 //Check if Users less then 900, if so start start at 0
-    if($numUsers < 900){
+    if ($numUsers < 900) {
         $currentStartId = 1;
 
         return $currentStartId;
-        }
+    }
 
-//Check if Run will not reach end of Users
+    //Check if Run will not reach end of Users
 
-    elseif($LastRunEndId + 900 < $numUsers){
-
-         $currentStartId = $LastRunEndId + 1;
-        return $currentStartId;
-        }
-
-   //If Run reaches end of Users
-
-    else{
-            $currentStartId = $LastRunEndId + 1;
+    elseif ($LastRunEndId + 900 < $numUsers) {
+        $currentStartId = $LastRunEndId + 1;
         return $currentStartId;
     }
 
+    //If Run reaches end of Users
 
+    else {
+        $currentStartId = $LastRunEndId + 1;
+        return $currentStartId;
+    }
 }
 
 
@@ -406,59 +395,47 @@ function getStartId($LastRunEndId,$numUsers){
 ////-------------------------------------------------------------------------------
 
 
-function getEndId($LastRunEndId,$numUsers,$currentStartId){
+function getEndId($LastRunEndId, $numUsers, $currentStartId)
+{
 
 //Check if Users less then 900, if so start start at 0
-    if($numUsers < 900){
-
+    if ($numUsers < 900) {
         $currentEndId = $numUsers;
         return $currentEndId;
-        }
-
-//Check if Run will not reach end of Users
-
-    elseif($LastRunEndId + 900 < $numUsers){
-
-         $currentEndId = $currentStartId + 900;
-                 return $currentEndId;
-
-        }
-
-   //If Run reaches end of Users
-
-    else{
-            $numDistance = $numUsers - $currentStartId;
-            $currentEndId = 900 - $numDistance;
-                    return $currentEndId;
-
     }
 
+    //Check if Run will not reach end of Users
 
+    elseif ($LastRunEndId + 900 < $numUsers) {
+        $currentEndId = $currentStartId + 900;
+        return $currentEndId;
+    }
+
+    //If Run reaches end of Users
+
+    else {
+        $numDistance = $numUsers - $currentStartId;
+        $currentEndId = 900 - $numDistance;
+        return $currentEndId;
+    }
 }
 
 
-function addTwitterDbUpdate($dateTime, $currentEndId, $numUsers,$currentStartId){
-
-$sql = "INSERT INTO twitter_dbupdates (date, start_id, end_id, total_users)" . "VALUES "
+function addTwitterDbUpdate($dateTime, $currentEndId, $numUsers, $currentStartId)
+{
+    $sql = "INSERT INTO twitter_dbupdates (date, start_id, end_id, total_users)" . "VALUES "
         . "('$dateTime','$currentStartId', '$currentEndId','$numUsers')";
-runQuery($sql,true);
-
+    runQuery($sql, true);
 }
 
 
-function runQuery($sql,$Insert){
-
+function runQuery($sql, $Insert)
+{
     global $conn; // Now all instances where the function refers to $x will refer to the GLOBAL version of $x, **not** just $x inside the function itself
-$result = $conn->query($sql);
+    $result = $conn->query($sql);
 
-if($Insert != True){
-$row = mysqli_fetch_array($result);
-return $row;
+    if ($Insert != true) {
+        $row = mysqli_fetch_array($result);
+        return $row;
+    }
 }
-
-}
-
-
-
-
-?>
