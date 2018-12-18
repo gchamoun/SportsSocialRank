@@ -37,7 +37,7 @@ $this->index($param);}
     public function get_users()
     {
        $users = $this->User_model->getAllUsers();
-
+y
        echo json_encode($users);
        exit();
     }

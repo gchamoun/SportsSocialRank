@@ -20,6 +20,7 @@
 </head>
 
 <body class="">
+
   <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
       <!--
@@ -200,12 +201,25 @@
             <div class="col-md-4">
               <div class="card card-profile">
                 <div class="card-body">
-                  <h4 class="card-title">Accounts Added</h4>
-                      <li>@auburnFB</li>
-                    <li>@alabamaFB</li>
+                          <h4 class="card-title">Added <?php echo $num_results = $accountsList->num_rows(); ?> entries</h4>
+                  <?php foreach ($accountsList->result() as $row): ?>
+                  <li><?php echo $row->name; ?></li>
+                  <?php endforeach; ?>
                 </div>
               </div>
             </div>
+            <div class="col-md-4">
+
+
+
+
+            </div>
+
+
+
+
+
+
           </div>
         </div>
       </div>

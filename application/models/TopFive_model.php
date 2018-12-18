@@ -8,6 +8,7 @@ class TopFive extends CI_Model {
 
 
 public function collegeFootball(){
+
   $this->db->select('*');
 
   $query = $this->db->query("
