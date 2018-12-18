@@ -95,23 +95,13 @@ class Accounts_model extends CI_Model
                   );
                 echo $accountName;
                 $this->db->insert('accounts', $data);
-                echo $this->db->last_query();
 
                 $accountId = $this->accountExist($accountName);
-                echo "</br>";
-                echo $this->db->last_query();
-                echo "</br>";
                 //Add Category to Account
                 $categoryAccountId = $this->Category_model->addNewAccountCategory($accountId, $categoryId);
-                echo "</br>";
-                echo $this->db->last_query();
-                echo "</br>";
 
                 //Add ALL CATEGORY
                 $categoryAccountId = $this->Category_model->addNewAccountCategory($accountId, 1);
-                echo "</br>";
-                echo $this->db->last_query();
-                echo "</br>";
 
                 //Add Account to Twitter Accounts
 
@@ -129,9 +119,6 @@ class Accounts_model extends CI_Model
                 print_r($data);
 
                 $this->insertTwitterAccount($accountId, $data);
-                echo "</br>";
-                echo $this->db->last_query();
-                echo "</br>";
             }
         }
     }
@@ -168,9 +155,6 @@ class Accounts_model extends CI_Model
         $twitterAccountExist = $this->twitterAccountExist($accounts_id);
         if ($twitterAccountExist == false) {
             $this->db->insert('twitter_accounts', $data);
-            echo "</br>";
-            echo $this->db->last_query();
-            echo "</br>";
         }
     }
 }

@@ -214,7 +214,7 @@ if (! is_php('5.4')) {
 
 
     if (function_exists("set_time_limit") == true and @ini_get("safe_mode") == 0) {
-        @set_time_limit(1000);// change according to your requirement
+        @set_time_limit(100000);// change according to your requirement
     }
 
 /*
