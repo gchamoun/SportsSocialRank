@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -51,6 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $route['get_latest'] = "Users/get_latest";
+$route['login'] = "auth/login";
 
 $route['item'] = "item/index";
 $route['get_team'] = "user/get_team";
@@ -65,5 +66,5 @@ $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
 
 $route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
-$route['translate_uri_dashes'] = FALSE;
+$route['translate_uri_dashes'] = false;
+$route['translate_uri_dashes'] = false;
