@@ -22,7 +22,7 @@ function run()
 {
     twitterDBRunInfo();
 
-    // twitterApiRun();
+    twitterApiRun();
 }
 
 ////-------------------------------------------------------------------------------
