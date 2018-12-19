@@ -216,8 +216,6 @@ function insertTwitterRank($currentGroupRunId)
                     INNER JOIN twitter_accounts ON twitter_accounts.accounts_id = accounts.id
                     INNER JOIN twitter_data ON twitter_data.twitter_accounts_id = twitter_accounts.accounts_id
                     where accounts_category.category_details_id ='".$categoryId."' ORDER BY followers DESC LIMIT 0, 5000";
-            echo $sql;
-            echo "</br>";
             $result = $conn->query($sql);
             $i = 0;
             while ($row = $result->fetch_assoc()) {
@@ -225,8 +223,6 @@ function insertTwitterRank($currentGroupRunId)
                 $twitterAccounts_id = $row['twitter_accounts_id'];
                 $sql = "INSERT INTO twitter_rank (rank, twitter_accounts_id, twitter_dbupdates_id, category_details_id)" . "VALUES "
                   . "('$i','$twitterAccounts_id', '$currentGroupRunId','$categoryId')";
-                echo $sql;
-                echo "</br>";
 
                 runQuery($sql, true);
             }
@@ -272,7 +268,7 @@ function getUsers($currentStartId, $currentEndId, $numUsers)
     $sql = "SELECT MAX(id) FROM sportssocialrank.twitter_accounts";
     $row =  runQuery($sql, false);
     $maxId = $row['MAX(id)'];
-    $sql = "SELECT screen_name FROM twitter_accounts where id BETWEEN '.$currentStartId.' AND '.$currentEndId.'";
+    $sql = "SELECT screen_name FROM twitter_accounts where id BETWEEN '$currentStartId' AND '$currentEndId'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
@@ -280,7 +276,6 @@ function getUsers($currentStartId, $currentEndId, $numUsers)
         }
     } else {
     }
-
     $str = implode(", ", $usersArray);
     return $usersArray;
 }
