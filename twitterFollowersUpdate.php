@@ -22,7 +22,7 @@ function run()
 {
     twitterDBRunInfo();
 
-    twitterApiRun();
+    // twitterApiRun();
 }
 
 ////-------------------------------------------------------------------------------
@@ -99,15 +99,15 @@ function twitterAPI($groupdId, $usersArray, $dateTime)
 
     $settings = array(
 
-'oauth_access_token' => "562520337-IWHslct3vqnZq9DPLHKKF7xlYrQrf5Nolatbm52T",
+  'oauth_access_token' => "562520337-IWHslct3vqnZq9DPLHKKF7xlYrQrf5Nolatbm52T",
 
-'oauth_access_token_secret' => "BmbHCJgoTTlhX99PjgRiN6uWqle6xJCepHvFDtNSfEHLy",
+  'oauth_access_token_secret' => "BmbHCJgoTTlhX99PjgRiN6uWqle6xJCepHvFDtNSfEHLy",
 
-'consumer_key' => "6wR5l7KwDSDFmb6swY1seW5MP",
+  'consumer_key' => "6wR5l7KwDSDFmb6swY1seW5MP",
 
-'consumer_secret' => "RTg9GlOPcX0YCCkodKzMzUw7z1iOdVy5fwJlD5JxbqW33XKNmL"
+  'consumer_secret' => "RTg9GlOPcX0YCCkodKzMzUw7z1iOdVy5fwJlD5JxbqW33XKNmL"
 
-);
+  );
 
     $url = 'https://api.twitter.com/1.1/users/show.json';
     $requestMethod = 'GET';
@@ -124,9 +124,9 @@ function twitterAPI($groupdId, $usersArray, $dateTime)
 
         $json =  $twitter->setGetfield($getfield)
 
-                 ->buildOauth($url, $requestMethod)
+                   ->buildOauth($url, $requestMethod)
 
-                 ->performRequest();
+                   ->performRequest();
 
         $twitterInfo = json_decode($json);
         $teamDisplayName = $twitterInfo->screen_name;
@@ -349,7 +349,7 @@ function getDateShort()
 
 function getLastRunEndId()
 {
-    $sql = "SELECT * FROM sportssocialrank.twitter_dbupdates;";
+    $sql = "SELECT * FROM sportssocialrank.twitter_dbupdates ORDER BY id desc limit 1;";
     $row = runQuery($sql, false);
     $endId = $row['end_id'];
     return $endId;
@@ -368,7 +368,6 @@ function getStartId($LastRunEndId, $numUsers)
 //Check if Users less then 900, if so start start at 0
     if ($numUsers < 900) {
         $currentStartId = 1;
-
         return $currentStartId;
     }
 
