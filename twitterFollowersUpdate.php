@@ -309,10 +309,10 @@ function db()
 
 function getNumUsers()
 {
-    $sql = "SELECT COUNT(*) FROM twitter_accounts;";
-    $row = runQuery($sql, false);
-    $numUsers = $row['COUNT(*)'];
-    return $numUsers;
+    $sql = "SELECT MAX(id) FROM sportssocialrank.twitter_accounts";
+    $row =  runQuery($sql, false);
+    $maxId = $row['MAX(id)'];
+    return $maxId;
 }
 
 
