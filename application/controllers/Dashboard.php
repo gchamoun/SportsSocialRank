@@ -8,6 +8,7 @@ class Dashboard extends CI_Controller
         $this->load->helper('url_helper');
         $this->load->model('Users_model');
         $this->load->model('Accounts_model');
+        $this->load->model('UserRank_model');
 
         $this->load->library('ion_auth');
         $this->ion_auth->user();
@@ -23,9 +24,13 @@ class Dashboard extends CI_Controller
 
                 $this->load->view('admin/dashboard');
             } else {
+                $data['user']=$this->ion_auth->user()->row();
+                $user = $this->ion_auth->user()->row();
+                $accountName = $user->company;
+                $data['rankings']=$this->UserRank_model->getAllRanks($accountName);
                 $this->load->view('admin/header');
 
-                $this->load->view('admin/dashboard');
+                $this->load->view('admin/dashboard', $data);
             }
         } else {
             echo 'You are NOT Logged in';

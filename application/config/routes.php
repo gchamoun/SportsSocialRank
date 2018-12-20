@@ -52,6 +52,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 $route['get_latest'] = "Users/get_latest";
 $route['login'] = "auth/login";
+$route['register'] = "auth/create_user";
 
 $route['item'] = "item/index";
 $route['get_team'] = "user/get_team";

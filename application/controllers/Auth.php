@@ -70,8 +70,10 @@ class Auth extends CI_Controller
             if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember)) {
                 //if the login is successful
                 //redirect to dashboard
+                $data['user']=$this->ion_auth->user()->row();
                 $this->session->set_flashdata('message', $this->ion_auth->messages());
-                redirect('/dashboard', 'refresh');
+                $company = $data['user']->company;
+                redirect('/dashboard/', 'refresh');
             } else {
                 // if the login was un-successful
                 // redirect them back to the login page
@@ -399,7 +401,7 @@ class Auth extends CI_Controller
         $this->data['title'] = $this->lang->line('create_user_heading');
 
         if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin()) {
-            redirect('auth', 'refresh');
+            // redirect('auth', 'refresh');
         }
 
         $tables = $this->config->item('tables', 'ion_auth');

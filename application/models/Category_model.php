@@ -18,6 +18,15 @@ class Category_model extends CI_Model
         return 0;
     }
 
+    public function getcategoryID($category)
+    {
+        $sql =  "SELECT * FROM category_details WHERE REPLACE(name, ' ', '') = REPLACE( '".$category."', ' ', '')";
+        $query = $this->db->query($sql);
+        $row = $query->row();
+        foreach ($query->result() as $row) {
+            return $row->id;
+        }
+    }
 
 
     public function addNewCategory($category)
@@ -67,6 +76,37 @@ class Category_model extends CI_Model
 //   return $row->id;
 // }
     }
+    public function getAccountsCategories($accountId)
+    {
+        $this->db->distinct();
+        $this->db->from('accounts_category');
+        $this->db->where('accounts_id', $accountId);
+        $query = $this->db->get();
+        foreach ($query->result() as $row) {
+        }
+        return $query->result();
+    }
+
+    public function categoryCount($categoryId)
+    {
+        $this->db->from('accounts_category');
+        $this->db->where('category_details_id', $categoryId);
+        $query = $this->db->get();
+        $lastQuery = $this->db->last_query();
+        return $query->num_rows();
+    }
+
+    public function getCategoryName($categoryId)
+    {
+        $this->db->from('category_details');
+        $this->db->where('id', $categoryId);
+        $query = $this->db->get();
+        foreach ($query->result() as $row) {
+            echo $row->name;
+            return $row->name;
+        }
+    }
+
     public function accountCategoryExist($accountId, $categoryId)
     {
         $this->db->from('accounts_category');
