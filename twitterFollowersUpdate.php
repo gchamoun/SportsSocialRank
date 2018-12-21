@@ -215,7 +215,7 @@ function insertTwitterRank($currentGroupRunId)
                     INNER JOIN accounts_category ON accounts.id = accounts_category.accounts_id
                     INNER JOIN category_details ON category_details.id = accounts_category.category_details_id
                     INNER JOIN twitter_accounts ON twitter_accounts.accounts_id = accounts.id
-                    INNER JOIN twitter_data ON twitter_data.twitter_accounts_id = twitter_accounts.accounts_id
+                    INNER JOIN twitter_data ON twitter_data.twitter_accounts_id = twitter_accounts.id
                     where accounts_category.category_details_id ='".$categoryId."' ORDER BY followers DESC LIMIT 0, 5000";
             $result = $conn->query($sql);
             $i = 0;
