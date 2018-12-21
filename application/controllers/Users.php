@@ -10,9 +10,9 @@ class Users extends CI_Controller
     }
 
 
-    public function get_latest()
+    public function get_latest($category)
     {
-        $users = $this->Users_model->getLatest();
+        $users = $this->Users_model->getLatest($category);
 
         echo json_encode($users);
         exit();

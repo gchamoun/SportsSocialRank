@@ -1,69 +1,6 @@
 
-      <!-- End Navbar -->
-      <div class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title">Add List Of Twitter Accounts</h4>
-                  <!-- <p class="card-category">Complete your profile</p> -->
-                </div>
-                <div class="card-body">
-                  <form action="http://192.168.1.213/accounts/inserttwitterList" method="POST" role="form" class="form-horizontal">
-                    <div class="row">
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">List Owner</label>
-                          <input name= "owner_screen_name" type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">List Slug</label>
-                          <input name= "slug"  type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Category</label>
-                          <input name= "category"  type="text" class="form-control">
-                        </div>
-                      </div>
-
-                    </div>
-
-                    <button type="submit" class="btn btn-primary pull-right">Add List</button>
-                    <div class="clearfix"></div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card card-profile">
-                <div class="card-body">
-                          <h4 class="card-title">Added <?php echo $num_results = $accountsList->num_rows(); ?> entries</h4>
-                  <?php foreach ($accountsList->result() as $row): ?>
-                  <li><?php echo $row->name; ?></li>
-                  <?php endforeach; ?>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
 
 
-
-
-            </div>
-
-
-
-
-
-
-          </div>
-        </div>
-      </div>
       <footer class="footer">
         <div class="container-fluid">
           <nav class="float-left">
@@ -123,23 +60,23 @@
         </li>
         <li class="header-title">Images</li>
         <li class="active">
-          <a class="img-holder switch-trigger" href="javascript:void(0)">
-            <img src="../assets/img/sidebar-1.jpg" alt="">
+          <a class="images-holder switch-trigger" href="javascript:void(0)">
+            <images src="../assets/images/sidebar-1.jpg" alt="">
           </a>
         </li>
         <li>
-          <a class="img-holder switch-trigger" href="javascript:void(0)">
-            <img src="../assets/img/sidebar-2.jpg" alt="">
+          <a class="images-holder switch-trigger" href="javascript:void(0)">
+            <images src="../assets/images/sidebar-2.jpg" alt="">
           </a>
         </li>
         <li>
-          <a class="img-holder switch-trigger" href="javascript:void(0)">
-            <img src="../assets/img/sidebar-3.jpg" alt="">
+          <a class="images-holder switch-trigger" href="javascript:void(0)">
+            <images src="../assets/images/sidebar-3.jpg" alt="">
           </a>
         </li>
         <li>
-          <a class="img-holder switch-trigger" href="javascript:void(0)">
-            <img src="../assets/img/sidebar-4.jpg" alt="">
+          <a class="images-holder switch-trigger" href="javascript:void(0)">
+            <images src="../assets/images/sidebar-4.jpg" alt="">
           </a>
         </li>
         <li class="button-container">
@@ -212,12 +149,15 @@
   <script src="../assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
+
   <script>
+
+
     $(document).ready(function() {
       $().ready(function() {
         $sidebar = $('.sidebar');
 
-        $sidebar_img_container = $sidebar.find('.sidebar-background');
+        $sidebar_images_container = $sidebar.find('.sidebar-background');
 
         $full_page = $('.full-page');
 
@@ -277,24 +217,24 @@
           }
         });
 
-        $('.fixed-plugin .img-holder').click(function() {
+        $('.fixed-plugin .images-holder').click(function() {
           $full_page_background = $('.full-page-background');
 
           $(this).parent('li').siblings().removeClass('active');
           $(this).parent('li').addClass('active');
 
 
-          var new_image = $(this).find("img").attr('src');
+          var new_image = $(this).find("images").attr('src');
 
-          if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-            $sidebar_img_container.fadeOut('fast', function() {
-              $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
-              $sidebar_img_container.fadeIn('fast');
+          if ($sidebar_images_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+            $sidebar_images_container.fadeOut('fast', function() {
+              $sidebar_images_container.css('background-image', 'url("' + new_image + '")');
+              $sidebar_images_container.fadeIn('fast');
             });
           }
 
           if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+            var new_image_full_page = $('.fixed-plugin li.active .images-holder').find('images').data('src');
 
             $full_page_background.fadeOut('fast', function() {
               $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
@@ -303,10 +243,10 @@
           }
 
           if ($('.switch-sidebar-image input:checked').length == 0) {
-            var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
-            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+            var new_image = $('.fixed-plugin li.active .images-holder').find("images").attr('src');
+            var new_image_full_page = $('.fixed-plugin li.active .images-holder').find('images').data('src');
 
-            $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+            $sidebar_images_container.css('background-image', 'url("' + new_image + '")');
             $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
           }
 
@@ -321,8 +261,8 @@
           $input = $(this);
 
           if ($input.is(':checked')) {
-            if ($sidebar_img_container.length != 0) {
-              $sidebar_img_container.fadeIn('fast');
+            if ($sidebar_images_container.length != 0) {
+              $sidebar_images_container.fadeIn('fast');
               $sidebar.attr('data-image', '#');
             }
 
@@ -333,9 +273,9 @@
 
             background_image = true;
           } else {
-            if ($sidebar_img_container.length != 0) {
+            if ($sidebar_images_container.length != 0) {
               $sidebar.removeAttr('data-image');
-              $sidebar_img_container.fadeOut('fast');
+              $sidebar_images_container.fadeOut('fast');
             }
 
             if ($full_page_background.length != 0) {
@@ -383,6 +323,14 @@
       });
     });
   </script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      md.initDashboardPageCharts();
+
+    });
+  </script>
+
 </body>
 
 </html>

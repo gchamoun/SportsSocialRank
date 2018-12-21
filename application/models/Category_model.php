@@ -102,7 +102,6 @@ class Category_model extends CI_Model
         $this->db->where('id', $categoryId);
         $query = $this->db->get();
         foreach ($query->result() as $row) {
-            echo $row->name;
             return $row->name;
         }
     }

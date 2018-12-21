@@ -7,18 +7,32 @@ class Users_model extends CI_Model
     }
 
 
-    public function getLatest()
+    public function getLatest($category)
     {
+        if ($category=="cfb") {
+            $category="College Football";
+        }
+        if ($category=="nflplayers") {
+            $category="NFL Player";
+        }
+        if ($category=="premierleague") {
+            $category="Premier League";
+        }
         $this->db->select('*');
 
         $query = $this->db->query("
-SELECT tt.*,users.Category
-  FROM twitter tt
-      INNER JOIN users
-  ON Twitter_username = display_name
-  ORDER
-  BY followers desc;");
-
+        SELECT acc.name, td.followers,td.following,td.followers_today_count, tc.screen_name,  tc.profile_image_url
+FROM accounts_category c
+INNER JOIN accounts acc
+    on acc.id = c.accounts_id
+INNER JOIN twitter_accounts tc
+	on acc.id = tc.accounts_id
+INNER JOIN twitter_data td
+    on tc.id = td.twitter_accounts_id
+INNER JOIN category_details cd
+	on c.category_details_id = cd.id
+WHERE cd.name = '$category'
+ order by td.followers desc;");
         return $query->result();
     }
     public function getTopFive($category)

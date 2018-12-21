@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/images/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Material Dashboard by Creative Tim
+    Sports Social Rank
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -20,8 +17,9 @@
 </head>
 
 <body class="">
+
   <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/images/sidebar-1.jpg">
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -29,68 +27,48 @@
     -->
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          <?php $data['user']=$this->ion_auth->user()->row();
-          $this->session->set_flashdata('message', $this->ion_auth->messages());
-          $company = $data['user']->company;
-           echo $company ?>
+          Sports Social Rank
         </a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
-            <a class="nav-link" href="./dashboard.html">
+          <li class="nav-item active ">
+            <a class="nav-link" href="./">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./accounts">
-              <i class="material-icons">person</i>
-              <p>Accounts</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
-              <i class="material-icons">content_paste</i>
-              <p>Accounts</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
-              <i class="material-icons">library_books</i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">location_ons</i>
-              <p>Maps</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
-              <i class="material-icons">language</i>
-              <p>RTL Support</p>
-            </a>
-          </li>
           <li class="nav-item active-pro ">
-            <a class="nav-link" href="./upgrade.html">
-              <i class="material-icons">unarchive</i>
-              <p>Upgrade to PRO</p>
+            <a class="nav-link" href="/logout">
+              <i class="material-person"></i>
+              <p>Logout</p>
             </a>
           </li>
         </ul>
       </div>
     </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end">
+            <form class="navbar-form">
+            </form>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+
+              </li>
+
+
+            </ul>
+          </div>
+        </div>
+      </nav>

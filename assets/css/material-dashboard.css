@@ -13204,7 +13204,8 @@ fieldset[disabled] .form-group .form-control {
 
 .navbar.bg-warning .dropdown-item:hover,
 .navbar.bg-warning .dropdown-item:focus {
-  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4);
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgb(236, 236, 236);
+}
   background-color: #ff9800;
   color: #fff;
 }
@@ -13488,7 +13489,8 @@ fieldset[disabled] .form-group .form-control {
 }
 
 .alert.alert-warning {
-  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4);
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgb(236, 236, 236);
+}
 }
 
 .alert.alert-warning i {
@@ -14789,7 +14791,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 
 .sidebar[data-color="orange"] li.active>a {
   background-color: #ff9800;
-  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4);
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgb(236, 236, 236);
+}
 }
 
 .sidebar[data-color="danger"] li.active>a {
@@ -16804,7 +16807,7 @@ label {
 .card.bg-warning,
 .card.card-rotate.bg-warning .front,
 .card.card-rotate.bg-warning .back {
-  background: linear-gradient(60deg, #ffa726, #fb8c00);
+  background: linear-gradient(60deg, #06b0c5, #08b1c6);
 }
 
 .card .card-header-danger .card-icon,
@@ -16846,7 +16849,8 @@ label {
 .card .card-header-warning .card-icon,
 .card .card-header-warning:not(.card-header-icon):not(.card-header-text),
 .card .card-header-warning .card-text {
-  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4);
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgb(236, 236, 236);
+}
 }
 
 .card .card-header-info .card-icon,

@@ -9,6 +9,8 @@ class Dashboard extends CI_Controller
         $this->load->model('Users_model');
         $this->load->model('Accounts_model');
         $this->load->model('UserRank_model');
+        $this->load->model('TwitterAccounts_model');
+        $this->load->helper('html');
 
         $this->load->library('ion_auth');
         $this->ion_auth->user();
@@ -28,12 +30,13 @@ class Dashboard extends CI_Controller
                 $user = $this->ion_auth->user()->row();
                 $accountName = $user->company;
                 $data['rankings']=$this->UserRank_model->getAllRanks($accountName);
-                $this->load->view('admin/header');
-
-                $this->load->view('admin/dashboard', $data);
+                $this->load->view('members/header');
+                $data['userInfo']=$this->TwitterAccounts_model->getAccountInfo($accountName);
+                $this->load->view('members/dashboard', $data);
+                $this->load->view('members/footer');
             }
         } else {
-            echo 'You are NOT Logged in';
+            redirect('auth/login', 'refresh');
         }
     }
 
@@ -50,7 +53,7 @@ class Dashboard extends CI_Controller
                 $this->load->view('admin/accounts', $data);
             }
         } else {
-            echo 'You are NOT Logged in';
+            redirect('auth/login', 'refresh');
         }
     }
 }

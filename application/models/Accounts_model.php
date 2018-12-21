@@ -87,7 +87,33 @@ class Accounts_model extends CI_Model
             echo ": ";
             echo $accountName;
             echo "</br>";
+
+            //If account exist check twitterID
             if ($accountId != false) {
+                $twitterId = $this->twitterAccountExist($accountId);
+                if ($twitterId != false) {
+                } else {
+                    //Add Category to Account
+                    $categoryAccountId = $this->Category_model->addNewAccountCategory($accountId, $categoryId);
+
+                    //Add ALL CATEGORY
+                    $categoryAccountId = $this->Category_model->addNewAccountCategory($accountId, 1);
+
+                    $data = array(
+                'accounts_id' => $accountId,
+                'name' => $accountName,
+                'screen_name'=> $accountsList->users[$i]->screen_name,
+                'location'=> $accountsList->users[$i]->location,
+                'url '=> $accountsList->users[$i]->url,
+                'description'=> $accountsList->users[$i]->description,
+                'verified'=> $accountsList->users[$i]->verified,
+                'profile_banner_url'=> $accountsList->users[$i]->profile_banner_url,
+                'profile_image_url'=> $accountsList->users[$i]->profile_image_url
+                );
+                    print_r($data);
+
+                    $this->insertTwitterAccount($accountId, $data);
+                }
             } else {
                 //Add Account to Accounts List
                 $data = array(

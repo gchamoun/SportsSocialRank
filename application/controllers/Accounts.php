@@ -22,7 +22,7 @@ class Accounts extends CI_Controller
         $this->load->model('Accounts_model');
         $this->Accounts_model->getTwitterList($slug, $owner_screen_name, $category);
 
-        $this->load->view('dashboard/accounts');
+        // redirect('/dashboard/accounts', 'refresh');
     }
     public function getAllAccounts()
     {

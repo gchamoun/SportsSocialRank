@@ -20,22 +20,18 @@ $('#item-list').DataTable({
   //'deferRender': false,
   'ajax'       : {
     "type"   : "Get",
-    "url"    : "get_latest",
+    "url"    : "users/get_latest",
 
     "dataSrc": function (json) {
       var return_data = new Array();
       for(var i=0;i< json.length; i++){
         return_data.push({
+          'rank' : i+1,
           'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
           'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
           'followers' : json[i].followers,
           'following' : json[i].following,
           'followers_today_count' : json[i].followers_today_count,
-          'growth_rate' : json[i].followers_today_count/json[i].followers,
-          'Category' : json[i].Category,
-          'date' : json[i].date,
-          'group_run_id' : json[i].group_run_id
-
 
 
 
@@ -45,14 +41,11 @@ $('#item-list').DataTable({
     }
   },
   "columns"    : [
+    {'data': 'rank'},
     {'data': 'user'},
     {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
     {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
     {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-    {'data': 'growth_rate'},
-    {'data': 'Category'},
-    {'data': 'date'},
-    {'data': 'group_run_id'}
 
 
 

@@ -20,11 +20,7 @@
 				<th>Followers</th>
                           <th>Following</th>
                                                     <th>Followers Today</th>
-                                                    <th>Growth Rate</th>
 
-                                                    <th>Category</th>
-                                                    <th>Last Run</th>
-                                                    <th>Group Run ID</th>
 
 
 			</tr>
@@ -33,11 +29,6 @@
 
 		</tbody>
 	</table>
-  <?php
-  echo "latest update: ". date('h:i:s a m/d/Y', strtotime($latestUpdate));?>
-</br>
-  <?php
-  echo "previous update: ". date('h:i:s a m/d/Y', strtotime($previousUpdate));?>
 
 
 </div>
