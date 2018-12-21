@@ -86,6 +86,14 @@ class Category_model extends CI_Model
         }
         return $query->result();
     }
+    public function getAllCategoriesId()
+    {
+        $this->db->from('category_details');
+        $query = $this->db->get();
+        foreach ($query->result() as $row) {
+        }
+        return $query->result();
+    }
 
     public function categoryCount($categoryId)
     {

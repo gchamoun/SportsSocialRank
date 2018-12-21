@@ -10,6 +10,8 @@ class Dashboard extends CI_Controller
         $this->load->model('Accounts_model');
         $this->load->model('UserRank_model');
         $this->load->model('TwitterAccounts_model');
+        $this->load->model('Category_model');
+
         $this->load->helper('html');
 
         $this->load->library('ion_auth');
@@ -23,8 +25,9 @@ class Dashboard extends CI_Controller
         if ($this->ion_auth->logged_in()) {
             if ($this->ion_auth->is_admin()) {
                 $this->load->view('admin/header');
-
-                $this->load->view('admin/dashboard');
+                $data['categories']=$this->Category_model->getAllCategoriesId();
+                $this->load->view('admin/dashboard', $data);
+                $this->load->view('admin/footer', $data);
             } else {
                 $data['user']=$this->ion_auth->user()->row();
                 $user = $this->ion_auth->user()->row();
