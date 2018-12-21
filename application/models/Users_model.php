@@ -18,6 +18,12 @@ class Users_model extends CI_Model
         if ($category=="premierleague") {
             $category="Premier League";
         }
+        if ($category=="FCSFootball") {
+            $category="FCS Football";
+        }
+        if ($category=="collegebasketball") {
+            $category="College Basketball";
+        }
         $this->db->select('*');
 
         $query = $this->db->query("

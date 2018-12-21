@@ -407,7 +407,7 @@
         "searching": true,
 
         "deferLoading": 57,
-            "url"    : "/users/get_latest/nflplayer",
+            "url"    : "/users/get_latest/nflplayers",
 
             "dataSrc": function (json) {
               var return_data = new Array();
