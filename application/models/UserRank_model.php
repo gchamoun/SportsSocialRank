@@ -17,6 +17,15 @@ class UserRank_model extends CI_Model
         return $query->row()->rank;
     }
 
+    public function getRankRange($twitterId, $categoryId, $days)
+    {
+        $sql =  "SELECT rank FROM twitter_rank tr inner join twitter_dbupdates td on td.id = tr.twitter_dbupdates_id  where date >= (CURDATE() - INTERVAL '".$days."' DAY)
+ AND (tr.twitter_accounts_id = '".$twitterId."' and tr.category_details_id = '".$categoryId."') order by td.id desc limit 1";
+        $query = $this->db->query($sql);
+        $row = $query->row();
+        return $query->row()->rank;
+    }
+
     public function getAllRanks($accountName)
     {
         $accountId = $this->User_model->getUserId($accountName);

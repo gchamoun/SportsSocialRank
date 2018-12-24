@@ -16,4 +16,10 @@ class UserRank extends CI_Controller
         $accountId = $this->User_model->getUserId($user);
         $users = $this->UserRank_model->getAllRanks($accountId);
     }
+
+    public function getYesterdayRank($user)
+    {
+        $accountId = $this->User_model->getUserId($user);
+        $users = $this->UserRank_model->getAllRanks($accountId);
+    }
 }

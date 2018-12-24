@@ -201,6 +201,11 @@ function insertTwitterRank($currentGroupRunId)
 {
     global $conn;
     global $categoryIdList;
+    $dateTime = getDateTime();
+    $oneDayAgo = date_modify($dateTime, '+1 day');
+    $oneWeekAgo = date_modify($dateTime, '+7 day');
+    $oneMonthAgo = date_modify($dateTime, '+1 month');
+    $oneYearAgo = date_modify($dateTime, '+1 year');
 
     $sql =  "SELECT id FROM sportssocialrank.category_details";
     $result = $conn->query($sql);
@@ -222,9 +227,54 @@ function insertTwitterRank($currentGroupRunId)
             while ($row = $result->fetch_assoc()) {
                 $i++;
                 $twitterAccounts_id = $row['twitter_accounts_id'];
-                $sql = "INSERT INTO twitter_rank (rank, twitter_accounts_id, twitter_dbupdates_id, category_details_id)" . "VALUES "
-                  . "('$i','$twitterAccounts_id', '$currentGroupRunId','$categoryId')";
 
+
+                //Get Rank from a day ago
+                $sql = "select * from twitter_rank tr inner join
+  twitter_dbupdates td on tr.twitter_dbupdates_id = td.id
+  where tr.twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'
+  and date date > '".$oneDayAgo."'";
+                $rankings = runQuery($sql, false);
+                $rankOneDayAgo = $rankings['rank'];
+                //Get Rank from a week ago
+                $sql = "select * from twitter_rank tr inner join
+                  twitter_dbupdates td on tr.twitter_dbupdates_id = td.id
+                  where tr.twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'
+                  and date date > '".$oneWeekAgo."'";
+                $rankings = runQuery($sql, false);
+                $rankOneWeekAgo = $rankings['rank'];
+                //Get Rank from a month ago
+                $sql = "select * from twitter_rank tr inner join
+                  twitter_dbupdates td on tr.twitter_dbupdates_id = td.id
+                  where tr.twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'
+                  and date date > '".$oneMonthAgo."'";
+                $rankings = runQuery($sql, false);
+                $rankOneMonthAgo = $rankings['rank'];
+                //Get Rank from a year ago
+                $sql = "select * from twitter_rank tr inner join
+                  twitter_dbupdates td on tr.twitter_dbupdates_id = td.id
+                  where tr.twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'
+                  and date date > '".$oneYearAgo."'";
+                $rankings = runQuery($sql, false);
+                $rankOneYearAgo = $rankings['rank'];
+
+                $sql = "select * from twitter_rank where twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'";
+                $rankId = runQuery($sql, false);
+                $idRanking = $rankId['id'];
+                if ($idRanking == null) {
+                    $sql = "INSERT INTO twitter_rank (rank, twitter_accounts_id, twitter_dbupdates_id, category_details_id,rank_day_change,rank_week_change,rank_month_change,rank_year_change)" . "VALUES "
+                    . "('$i','$twitterAccounts_id', '$currentGroupRunId','$categoryId','$rankOneDayAgo','$rankOneWeekAgo','$rankOneMonthAgo','$rankOneYearAgo')";
+                    runQuery($sql, true);
+                } else {
+                    $sql = "UPDATE twitter_rank SET rank ='".$i."',twitter_dbupdates_id='".$currentGroupRunId."', rank_day_change ='".$rankOneDayAgo.
+             "', rank_week_change ='".$rankOneWeekAgo."' , rankOneMonthAgo ='".
+              $rankOneMonthAgo."' , rankOneYearAgo ='".$rankOneYearAgo."'
+      WHERE twitter_account_id = '".$twitterAccounts_id."' and category_details_id = '".$categoryId."';";
+                    runQuery($sql, true);
+                }
+
+                $sql = "INSERT INTO twitter_rank_archive (rank, twitter_accounts_id, twitter_dbupdates_id, category_details_id,rank_day_change,rank_week_change,rank_month_change,rank_year_change)" . "VALUES "
+                  . "('$i','$twitterAccounts_id', '$currentGroupRunId','$categoryId','$rankOneDayAgo','$rankOneWeekAgo','$rankOneMonthAgo','$rankOneYearAgo')";
                 runQuery($sql, true);
             }
         }
