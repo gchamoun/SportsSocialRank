@@ -65,7 +65,7 @@ WHERE cd.name = '$category'
         //   ORDER
         //   BY followers desc limit 5;");
         $query = $this->db->query("
-  SELECT tr.rank_day_change,acc.name, td.followers,td.following,td.followers_today_count, tc.screen_name,  tc.profile_image_url
+  SELECT acc.name, td.followers,td.following,td.followers_today_count, tc.screen_name,  tc.profile_image_url
 FROM accounts_category c
 INNER JOIN accounts acc
     on acc.id = c.accounts_id
