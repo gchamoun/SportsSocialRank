@@ -27,16 +27,18 @@ class Users_model extends CI_Model
         $this->db->select('*');
 
         $query = $this->db->query("
-        SELECT acc.name, td.followers,td.following,td.followers_today_count, tc.screen_name,  tc.profile_image_url
-FROM accounts_category c
-INNER JOIN accounts acc
-    on acc.id = c.accounts_id
-INNER JOIN twitter_accounts tc
-	on acc.id = tc.accounts_id
-INNER JOIN twitter_data td
-    on tc.id = td.twitter_accounts_id
-INNER JOIN category_details cd
-	on c.category_details_id = cd.id
+        SELECT tr.rank, tr.category_details_id, acc.name, td.followers,td.following,td.followers_today_count, tc.screen_name,  tc.profile_image_url
+  FROM accounts_category c
+  INNER JOIN accounts acc
+      on acc.id = c.accounts_id
+  INNER JOIN twitter_accounts tc
+  	on acc.id = tc.accounts_id
+  INNER JOIN twitter_data td
+      on tc.id = td.twitter_accounts_id
+  INNER JOIN category_details cd
+  	on c.category_details_id = cd.id
+  INNER JOIN twitter_rank tr
+  	on (tr.twitter_accounts_id = tc.id) and (c.category_details_id = tr.category_details_id)
 WHERE cd.name = '$category'
  order by td.followers desc;");
         return $query->result();
@@ -63,7 +65,7 @@ WHERE cd.name = '$category'
         //   ORDER
         //   BY followers desc limit 5;");
         $query = $this->db->query("
-  SELECT acc.name, td.followers,td.following,td.followers_today_count, tc.screen_name,  tc.profile_image_url
+  SELECT tr.rank_day_change,acc.name, td.followers,td.following,td.followers_today_count, tc.screen_name,  tc.profile_image_url
 FROM accounts_category c
 INNER JOIN accounts acc
     on acc.id = c.accounts_id

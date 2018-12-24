@@ -297,7 +297,7 @@
                  for(var i=0;i< json.length; i++){
                    return_data.push({
                      'rank' : i+1,
-                     'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+                     'user':json[i].rank_day_change + ' ' +'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
                      'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
                      'followers' : json[i].followers,
                      'following' : json[i].following,
@@ -336,7 +336,7 @@
               for(var i=0;i< json.length; i++){
                 return_data.push({
                   'rank' : i+1,
-                  'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+                  'user':json[i].rank_day_change + ' ' +'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
                   'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
                   'followers' : json[i].followers,
                   'following' : json[i].following,
@@ -375,7 +375,7 @@
               for(var i=0;i< json.length; i++){
                 return_data.push({
                   'rank' : i+1,
-                  'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+                  'user':json[i].rank_day_change + ' ' +'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
                   'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
                   'followers' : json[i].followers,
                   'following' : json[i].following,
@@ -414,7 +414,7 @@
               for(var i=0;i< json.length; i++){
                 return_data.push({
                   'rank' : i+1,
-                  'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+                  'user':json[i].rank_day_change + ' ' +'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
                   'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
                   'followers' : json[i].followers,
                   'following' : json[i].following,
@@ -453,7 +453,7 @@
               for(var i=0;i< json.length; i++){
                 return_data.push({
                   'rank' : i+1,
-                  'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+                  'user':json[i].rank_day_change + ' ' +'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
                   'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
                   'followers' : json[i].followers,
                   'following' : json[i].following,
@@ -492,7 +492,7 @@
               for(var i=0;i< json.length; i++){
                 return_data.push({
                   'rank' : i+1,
-                  'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+                  'user':json[i].rank_day_change + ' ' +'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
                   'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
                   'followers' : json[i].followers,
                   'following' : json[i].following,
@@ -531,7 +531,7 @@ $('#NBA-accounts').DataTable({
            for(var i=0;i< json.length; i++){
              return_data.push({
                'rank' : i+1,
-               'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+               'user':json[i].rank_day_change + ' ' +'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
                'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
                'followers' : json[i].followers,
                'following' : json[i].following,
@@ -570,7 +570,7 @@ $('#NFL-accounts').DataTable({
            for(var i=0;i< json.length; i++){
              return_data.push({
                'rank' : i+1,
-               'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+               'user':json[i].rank_day_change + ' ' +'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
                'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
                'followers' : json[i].followers,
                'following' : json[i].following,
@@ -609,7 +609,8 @@ $('#ALL-accounts').DataTable({
         for(var i=0;i< json.length; i++){
           return_data.push({
             'rank' : i+1,
-            'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+
+            'user': json[i].rank_day_change + ' ' + '<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
             'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
             'followers' : json[i].followers,
             'following' : json[i].following,
@@ -648,7 +649,7 @@ $('#cfb-accounts').DataTable({
         for(var i=0;i< json.length; i++){
           return_data.push({
             'rank' : i+1,
-            'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+            'user':json[i].rank_day_change + ' ' +'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
             'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
             'followers' : json[i].followers,
             'following' : json[i].following,
