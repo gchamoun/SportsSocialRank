@@ -201,11 +201,6 @@ function insertTwitterRank($currentGroupRunId)
 {
     global $conn;
     global $categoryIdList;
-    $dateTime = getDateTime();
-    $oneDayAgo = date_modify($dateTime, '+1 day');
-    $oneWeekAgo = date_modify($dateTime, '+7 day');
-    $oneMonthAgo = date_modify($dateTime, '+1 month');
-    $oneYearAgo = date_modify($dateTime, '+1 year');
 
     $sql =  "SELECT id FROM sportssocialrank.category_details";
     $result = $conn->query($sql);
@@ -232,29 +227,29 @@ function insertTwitterRank($currentGroupRunId)
                 //Get Rank from a day ago
                 $sql = "select * from twitter_rank_archive tr inner join
   twitter_dbupdates td on tr.twitter_dbupdates_id = td.id
-  where tr.twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'
-  and date < '".$oneDayAgo."'order by date desc limit 1";
+  where tr.twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'and date BETWEEN DATE_SUB(NOW(), INTERVAL 1 DAY) AND NOW() order by date asc limit 1";
                 $rankings = runQuery($sql, false);
                 $rankOneDayAgo = $rankings['rank'];
                 //Get Rank from a week ago
                 $sql = "select * from twitter_rank_archive tr inner join
                   twitter_dbupdates td on tr.twitter_dbupdates_id = td.id
                   where tr.twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'
-                  and date < '".$oneWeekAgo."'order by date desc limit 1";
+                  and date BETWEEN DATE_SUB(NOW(), INTERVAL 7 DAY) AND NOW() order by date asc limit 1";
                 $rankings = runQuery($sql, false);
+                echo $sql;
                 $rankOneWeekAgo = $rankings['rank'];
-                //Get Rank from a month ago
+                //Get Rank for 30 days
                 $sql = "select * from twitter_rank_archive tr inner join
                   twitter_dbupdates td on tr.twitter_dbupdates_id = td.id
                   where tr.twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'
-                  and date < '".$oneMonthAgo."'order by date desc limit 1";
+                and date BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) AND NOW() order by date asc limit 1";
                 $rankings = runQuery($sql, false);
                 $rankOneMonthAgo = $rankings['rank'];
                 //Get Rank from a year ago
                 $sql = "select * from twitter_rank_archive tr inner join
                   twitter_dbupdates td on tr.twitter_dbupdates_id = td.id
                   where tr.twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'
-                  and date < '".$oneYearAgo."'order by date desc limit 1";
+                  and and date BETWEEN DATE_SUB(NOW(), INTERVAL 1 YEAR) AND NOW() order by date asc limit 1";
                 $rankings = runQuery($sql, false);
                 $rankOneYearAgo = $rankings['rank'];
 
@@ -479,6 +474,8 @@ function addTwitterDbUpdate($dateTime, $currentEndId, $numUsers, $currentStartId
 
 function runQuery($sql, $Insert)
 {
+    print $sql . PHP_EOL;
+
     global $conn; // Now all instances where the function refers to $x will refer to the GLOBAL version of $x, **not** just $x inside the function itself
     $result = $conn->query($sql);
 
