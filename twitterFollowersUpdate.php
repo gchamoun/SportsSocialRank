@@ -230,35 +230,35 @@ function insertTwitterRank($currentGroupRunId)
 
 
                 //Get Rank from a day ago
-                $sql = "select * from twitter_rank tr inner join
+                $sql = "select * from twitter_rank_archive tr inner join
   twitter_dbupdates td on tr.twitter_dbupdates_id = td.id
   where tr.twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'
-  and date date > '".$oneDayAgo."'";
+  and date < '".$oneDayAgo."'order by date desc limit 1";
                 $rankings = runQuery($sql, false);
                 $rankOneDayAgo = $rankings['rank'];
                 //Get Rank from a week ago
-                $sql = "select * from twitter_rank tr inner join
+                $sql = "select * from twitter_rank_archive tr inner join
                   twitter_dbupdates td on tr.twitter_dbupdates_id = td.id
                   where tr.twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'
-                  and date date > '".$oneWeekAgo."'";
+                  and date < '".$oneWeekAgo."'order by date desc limit 1";
                 $rankings = runQuery($sql, false);
                 $rankOneWeekAgo = $rankings['rank'];
                 //Get Rank from a month ago
-                $sql = "select * from twitter_rank tr inner join
+                $sql = "select * from twitter_rank_archive tr inner join
                   twitter_dbupdates td on tr.twitter_dbupdates_id = td.id
                   where tr.twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'
-                  and date date > '".$oneMonthAgo."'";
+                  and date < '".$oneMonthAgo."'order by date desc limit 1";
                 $rankings = runQuery($sql, false);
                 $rankOneMonthAgo = $rankings['rank'];
                 //Get Rank from a year ago
-                $sql = "select * from twitter_rank tr inner join
+                $sql = "select * from twitter_rank_archive tr inner join
                   twitter_dbupdates td on tr.twitter_dbupdates_id = td.id
                   where tr.twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'
-                  and date date > '".$oneYearAgo."'";
+                  and date < '".$oneYearAgo."'order by date desc limit 1";
                 $rankings = runQuery($sql, false);
                 $rankOneYearAgo = $rankings['rank'];
 
-                $sql = "select * from twitter_rank where twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'";
+                $sql = "select * from twitter_rank_archive where twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'";
                 $rankId = runQuery($sql, false);
                 $idRanking = $rankId['id'];
                 if ($idRanking == null) {
