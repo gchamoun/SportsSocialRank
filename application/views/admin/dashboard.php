@@ -36,8 +36,10 @@
                   <table id="<?php echo $category->name; ?>-accounts" class="table table-striped " style="width:100%">
                   <thead>
                     <tr>
-
                       <th>Rank</th>
+
+                      <th>+/-</th>
+
 
                       <th>Name</th>
 

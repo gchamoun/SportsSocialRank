@@ -27,7 +27,7 @@ class Users_model extends CI_Model
         $this->db->select('*');
 
         $query = $this->db->query("
-        SELECT tr.rank_day_change, tr.rank_day_change,tr.rank, tr.category_details_id, acc.name, td.followers,td.following,td.followers_today_count, tc.screen_name,  tc.profile_image_url
+        SELECT (tr.rank_day_change - tr.rank) AS rankingSub, tr.rank_day_change, tr.rank_day_change,tr.rank, tr.category_details_id, acc.name, td.followers,td.following,td.followers_today_count, tc.screen_name,  tc.profile_image_url
   FROM accounts_category c
   INNER JOIN accounts acc
       on acc.id = c.accounts_id

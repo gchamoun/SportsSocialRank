@@ -283,6 +283,8 @@ $('#ALL-accounts').DataTable({
       "type"   : "Get",
       "processing": true,
   "serverSide": true,
+  "order": [[ 2, "desc" ]],
+
   "ordering": true,
   "searching": true,
 
@@ -292,8 +294,21 @@ $('#ALL-accounts').DataTable({
       "dataSrc": function (json) {
         var return_data = new Array();
         for(var i=0;i< json.length; i++){
+          $rankSub = json[i].rankingSub;
+        if ($rankSub > 0){
+        $rankSub =  '<span class="text-success"><i class="fa fa-sort-asc"></i>' + json[i].rankingSub + '</span>';
+        }
+        if ($rankSub == 0){
+          $rankSub =  '<span class="text-alert"><i class="fa fa-minus"></i></span>';
+        }
+
+        if ($rankSub < 0){
+        $rankSub =  '<span class="text-alert"><i class="fa fa-sort-desc"></i>' + json[i].rankingSub + '</span>';
+        }
+$rank = i +1;
           return_data.push({
-            'rank' : i+1,
+             'rank' :  $rank,
+             'change' :  $rankSub,
             'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
             'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
             'followers' : json[i].followers,
@@ -305,12 +320,15 @@ $('#ALL-accounts').DataTable({
       }
     },
     "columns"    : [
+
       {'data': 'rank'},
+      {'data': 'change'},
 
       {'data': 'user'},
       {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
       {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
       {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+
 
 
 
@@ -324,15 +342,27 @@ $('#cfb-accounts').DataTable({
   "serverSide": true,
   "ordering": true,
   "searching": true,
-
   "deferLoading": 57,
-      "url"    : "/users/get_latest/cfb",
+   "url"    : "/users/get_latest/cfb",
 
       "dataSrc": function (json) {
         var return_data = new Array();
         for(var i=0;i< json.length; i++){
+          $rankSub = json[i].rankingSub;
+        if ($rankSub > 0){
+        $rankSub =  '<span class="text-success"><i class="fa fa-sort-asc"></i>' + json[i].rankingSub + '</span>';
+        }
+        if ($rankSub == 0){
+          $rankSub =  '<span class="text-alert"><i class="fa fa-minus"></i></span>';
+        }
+
+        if ($rankSub < 0){
+        $rankSub =  '<span class="text-alert"><i class="fa fa-sort-desc"></i>' + json[i].rankingSub + '</span>';
+        }
+$rank = i +1;
           return_data.push({
-            'rank' : i+1,
+             'rank' :  $rank,
+             'change' :  $rankSub,
             'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
             'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
             'followers' : json[i].followers,
@@ -344,12 +374,15 @@ $('#cfb-accounts').DataTable({
       }
     },
     "columns"    : [
+
       {'data': 'rank'},
+      {'data': 'change'},
 
       {'data': 'user'},
       {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
       {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
       {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+
 
 
 
