@@ -14,4 +14,11 @@ class TwitterAccounts_model extends CI_Model
         $result = $query->row();
         return $result;
     }
+    public function getAccountInfoTwitter($accountName)
+    {
+        $this->db->where('screen_name', $accountName);
+        $query = $this->db->get('twitter_accounts');
+        $result = $query->row();
+        return $result;
+    }
 }

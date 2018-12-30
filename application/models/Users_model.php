@@ -27,7 +27,7 @@ class Users_model extends CI_Model
         $this->db->select('*');
 
         $query = $this->db->query("
-        SELECT (tr.rank_day_change - tr.rank) AS rankingSub, tr.rank_day_change, tr.rank_day_change,tr.rank, tr.category_details_id, acc.name, td.followers,td.following,td.followers_today_count, tc.screen_name,  tc.profile_image_url
+        SELECT acc.name, td.followers,td.following,td.followers_today_count, tc.screen_name,  tc.profile_image_url
   FROM accounts_category c
   INNER JOIN accounts acc
       on acc.id = c.accounts_id
@@ -37,8 +37,6 @@ class Users_model extends CI_Model
       on tc.id = td.twitter_accounts_id
   INNER JOIN category_details cd
   	on c.category_details_id = cd.id
-  INNER JOIN twitter_rank tr
-  	on (tr.twitter_accounts_id = tc.id) and (c.category_details_id = tr.category_details_id)and (td.twitter_dbupdates_id = tr.twitter_dbupdates_id)
 WHERE cd.name = '$category'
  order by td.followers desc;");
         return $query->result();

@@ -38,7 +38,6 @@
                     <tr>
                       <th>Rank</th>
 
-                      <th>+/-</th>
 
 
                       <th>Name</th>

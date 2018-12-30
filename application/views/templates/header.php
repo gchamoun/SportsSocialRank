@@ -12,10 +12,7 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <title>Sports Social Rank</title>
-<?php
-echo link_tag('assets/css/bootstrap.min.css'); //this will call the css
-
-                ?>
+<?php echo link_tag('assets/css/bootstrap.min.css'); //this will call the css?>
         </head>
 
 

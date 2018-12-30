@@ -42,6 +42,19 @@ class Dashboard extends CI_Controller
             redirect('auth/login', 'refresh');
         }
     }
+    public function user($user)
+    {
+        if ($this->ion_auth->logged_in()) {
+            $accountName = $user;
+            $data['rankings']=$this->UserRank_model->getAllRanks($accountName);
+            $this->load->view('members/header');
+            $data['userInfo']=$this->TwitterAccounts_model->getAccountInfoTwitter($accountName);
+            $this->load->view('members/user', $data);
+            $this->load->view('members/footer');
+        } else {
+            redirect('auth/login', 'refresh');
+        }
+    }
 
     public function accounts()
     {

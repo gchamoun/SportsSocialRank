@@ -51,6 +51,7 @@ if ($rank[1] == "College Football") {
                     <tr>
 
                       <th>Rank</th>
+                      <th>+/-</th>
 
                       <th>Name</th>
 

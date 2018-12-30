@@ -5,8 +5,18 @@ class User extends CI_Controller
     {
         parent::__construct();
         $this->load->database();
-        $this->load->helper('url_helper');
         $this->load->model('User_model');
+        $this->load->helper('url_helper');
+        $this->load->model('Users_model');
+        $this->load->model('Accounts_model');
+        $this->load->model('UserRank_model');
+        $this->load->model('TwitterAccounts_model');
+        $this->load->model('Category_model');
+
+        $this->load->helper('html');
+
+        $this->load->library('ion_auth');
+        $this->ion_auth->user();
     }
 
     public function _remap($param)
@@ -21,15 +31,18 @@ class User extends CI_Controller
     }
 
 
-    public function index($param)
+    public function index($user)
     {
-        $data['team'] = $param;
-        $data['title'] = ucfirst($param); // Capitalize the first letter
-        $this->load->view('templates/header', $data);
-        $this->load->model('User_model');
-        $this->User_model->isUser($param);
-        $this->load->view('user/userPage', $data);
-        $this->load->view('templates/footer', $data);
+        if ($this->ion_auth->logged_in()) {
+            $accountName = $user;
+            $data['rankings']=$this->UserRank_model->getAllRanks($accountName);
+            $this->load->view('members/header');
+            $data['userInfo']=$this->TwitterAccounts_model->getAccountInfoTwitter($accountName);
+            $this->load->view('members/user', $data);
+            $this->load->view('members/footer');
+        } else {
+            redirect('auth/login', 'refresh');
+        }
     }
     public function get_users()
     {
