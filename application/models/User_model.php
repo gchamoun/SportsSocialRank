@@ -25,6 +25,16 @@ class User_model extends CI_Model
             return $twitterId;
         }
     }
+    public function getAccountNameFromTwitter($twitterScreenName)
+    {
+        $sql =  "Select accounts.name from accounts inner join twitter_accounts where twitter_accounts.accounts_id = accounts.id and twitter_accounts.screen_name = '".$twitterScreenName."'";
+        $query = $this->db->query($sql);
+        $row = $query->row();
+        foreach ($query->result() as $row) {
+            $accountName = $row->name;
+            return $accountName;
+        }
+    }
     public function isUser($user)
     {
         $sql = "SELECT id FROM sportssocialrank.twitter_archive where display_name =  '" . $user ."' limit 1; ";
@@ -35,6 +45,7 @@ class User_model extends CI_Model
         } else {
         }
     }
+
     public function getAllUsers()
     {
         $query = $this->db->get_where('twitter');

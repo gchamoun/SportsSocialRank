@@ -14,6 +14,17 @@
   <link href="../assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+
+  <!--Load the AJAX API-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+
+  <script type="text/javascript" src="js/app.js"></script>
+
+
+
 </head>
 
 <body class="">
@@ -25,17 +36,18 @@
 
         Tip 2: you can also add an image using data-image tag
     -->
-      <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Sports Social Rank
-        </a>
-      </div>
-      <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li class="nav-item active ">
-            <a class="nav-link" href="./">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
+    <div class="logo">
+      <a href="<?=base_url()?>dashboard" class="simple-text logo-normal">
+        Sports Social Rank
+      </a>
+    </div>
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="nav-item active ">
+          <a class="nav-link" href="<?=base_url()?>dashboard">
+            <i class="material-icons">dashboard</i>
+            <p>Dashboard</p>
+
             </a>
           </li>
           <li class="nav-item active-pro ">

@@ -10,6 +10,7 @@
             <?php foreach ($rankings as $rank) {
                   ?>
 
+
             <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
                 <div class="card-header card-header-info card-header-icon">
@@ -45,13 +46,25 @@
 <?php
 if ($rank[1] == "College Football") {
                       $rank[1] = "cfb";
+                  }
+                  if ($rank[1] == "NFL Player") {
+                      $rank[1] = "nflplayer";
+                  }
+                  if ($rank[1] == "Premier League") {
+                      $rank[1] = "premierleague";
+                  }
+                  if ($rank[1] == "College Basketball") {
+                      $rank[1] = "collegebasketball";
+                  }
+                  if ($rank[1] == "FCS Football") {
+                      $rank[1] = "FCSFootball";
                   } ?>
+
                   <table id="<?php echo $rank[1]; ?>-accounts" class="table table-striped " style="width:100%">
                   <thead>
                     <tr>
 
                       <th>Rank</th>
-                      <th>+/-</th>
 
                       <th>Name</th>
 

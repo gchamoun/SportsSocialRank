@@ -34,12 +34,13 @@ class User extends CI_Controller
     public function index($user)
     {
         if ($this->ion_auth->logged_in()) {
-            $accountName = $user;
+            $accountName=$this->User_model->getAccountNameFromTwitter($user);
+            $data['chartData']=$this->TwitterAccounts_model->getFollowers(3);
             $data['rankings']=$this->UserRank_model->getAllRanks($accountName);
-            $this->load->view('members/header');
-            $data['userInfo']=$this->TwitterAccounts_model->getAccountInfoTwitter($accountName);
+            $this->load->view('admin/header', $data);
+            $data['userInfo']=$this->TwitterAccounts_model->getAccountInfoTwitter($user);
             $this->load->view('members/user', $data);
-            $this->load->view('members/footer');
+            $this->load->view('admin/footer');
         } else {
             redirect('auth/login', 'refresh');
         }

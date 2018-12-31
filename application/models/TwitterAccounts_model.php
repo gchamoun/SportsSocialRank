@@ -21,4 +21,15 @@ class TwitterAccounts_model extends CI_Model
         $result = $query->row();
         return $result;
     }
+    public function getFollowers($twitterAccountId)
+    {
+        $sql = "select * from twitter_data_archive where twitter_accounts_id = '" . $twitterAccountId ."' order by date desc";
+        $query = $this->db->query($sql);
+
+        foreach ($query->result() as $row) {
+            $followers = $row->followers;
+            $date = $row->date;
+        }
+        return json_encode($query->result());
+    }
 }

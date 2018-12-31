@@ -11,4 +11,8 @@ class TwitterAccount extends CI_Controller
     {
         $this->TwitterAccounts_model->getAccountInfo($accountId);
     }
+    public function getFollowers($accountId)
+    {
+        $this->TwitterAccounts_model->getFollowers($accountId);
+    }
 }

@@ -1,38 +1,3 @@
-<footer class="footer">
-       <div class="container-fluid">
-         <nav class="float-left">
-           <ul>
-             <li>
-               <a href="https://www.creative-tim.com">
-                 Creative Tim
-               </a>
-             </li>
-             <li>
-               <a href="https://creative-tim.com/presentation">
-                 About Us
-               </a>
-             </li>
-             <li>
-               <a href="http://blog.creative-tim.com">
-                 Blog
-               </a>
-             </li>
-             <li>
-               <a href="https://www.creative-tim.com/license">
-                 Licenses
-               </a>
-             </li>
-           </ul>
-         </nav>
-         <div class="copyright float-right">
-           &copy;
-           <script>
-             document.write(new Date().getFullYear())
-           </script>, made with <i class="material-icons">favorite</i> by
-           <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-         </div>
-       </div>
-     </footer>
    </div>
  </div>
  <div class="fixed-plugin">
@@ -272,15 +237,137 @@
    });
  </script>
  <script>
+ 
    $(document).ready(function() {
      // Javascript method's body can be found in assets/js/demos.js
      md.initDashboardPageCharts();
    });
 
 
+   $('#FCSFootball-accounts').DataTable({
+                //'deferRender': false,
+                'ajax'       : {
+                  "type"   : "Get",
+                  "processing": true,
+              "serverSide": true,
+              "ordering": true,
+              "searching": true,
+
+              "deferLoading": 57,
+                  "url"    : "/users/get_latest/FCSFootball",
+                  "dataSrc": function (json) {
+                    var return_data = new Array();
+                    for(var i=0;i< json.length; i++){
+                  $rank = i +1;
+                      return_data.push({
+                         'rank' :  $rank,
+                        'user':'<a href="<?=base_url()?>user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+                        'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+                        'followers' : json[i].followers,
+                        'following' : json[i].following,
+                        'followers_today_count' : json[i].followers_today_count,
+                      })
+                    }
+                    return return_data;
+                  }
+                  },
+                  "columns"    : [
+
+                  {'data': 'rank'},
+
+                  {'data': 'user'},
+                  {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                  {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                  {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
 
 
-    $('#FCSFootball-accounts').DataTable({
+
+
+                  ]
+                  });
+$('#collegebasketball-accounts').DataTable({
+                //'deferRender': false,
+                'ajax'       : {
+                  "type"   : "Get",
+                  "processing": true,
+              "serverSide": true,
+              "ordering": true,
+              "searching": true,
+
+              "deferLoading": 57,
+                  "url"    : "/users/get_latest/collegebasketball",
+                  "dataSrc": function (json) {
+                    var return_data = new Array();
+                    for(var i=0;i< json.length; i++){
+                  $rank = i +1;
+                      return_data.push({
+                         'rank' :  $rank,
+                        'user':'<a href="<?=base_url()?>user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+                        'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+                        'followers' : json[i].followers,
+                        'following' : json[i].following,
+                        'followers_today_count' : json[i].followers_today_count,
+                      })
+                    }
+                    return return_data;
+                  }
+                  },
+                  "columns"    : [
+
+                  {'data': 'rank'},
+
+                  {'data': 'user'},
+                  {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                  {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                  {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+
+
+
+
+                  ]
+                  });
+$('#premierleague-accounts').DataTable({
+                //'deferRender': false,
+                'ajax'       : {
+                  "type"   : "Get",
+                  "processing": true,
+              "serverSide": true,
+              "ordering": true,
+              "searching": true,
+
+              "deferLoading": 57,
+                  "url"    : "/users/get_latest/premierleague",
+                  "dataSrc": function (json) {
+                    var return_data = new Array();
+                    for(var i=0;i< json.length; i++){
+                  $rank = i +1;
+                      return_data.push({
+                         'rank' :  $rank,
+                        'user':'<a href="<?=base_url()?>user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+                        'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+                        'followers' : json[i].followers,
+                        'following' : json[i].following,
+                        'followers_today_count' : json[i].followers_today_count,
+                      })
+                    }
+                    return return_data;
+                  }
+                  },
+                  "columns"    : [
+
+                  {'data': 'rank'},
+
+                  {'data': 'user'},
+                  {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                  {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                  {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+
+
+
+
+                  ]
+                  });
+$('#ALL-accounts').DataTable({
              //'deferRender': false,
              'ajax'       : {
                "type"   : "Get",
@@ -290,26 +377,14 @@
            "searching": true,
 
            "deferLoading": 57,
-               "url"    : "/users/get_latest/FCSFootball",
+               "url"    : "/users/get_latest/all",
                "dataSrc": function (json) {
                  var return_data = new Array();
                  for(var i=0;i< json.length; i++){
-                   $rankSub = json[i].rankingSub;
-                 if ($rankSub > 0){
-                 $rankSub =  '<span class="text-success"><i class="fa fa-sort-asc"></i>' + json[i].rankingSub + '</span>';
-                 }
-                 if ($rankSub == 0){
-                   $rankSub =  '<span class="text-alert"><i class="fa fa-minus"></i></span>';
-                 }
-
-                 if ($rankSub < 0){
-                 $rankSub =  '<span class="text-alert"><i class="fa fa-sort-desc"></i>' + json[i].rankingSub + '</span>';
-                 }
                $rank = i +1;
                    return_data.push({
                       'rank' :  $rank,
-                      'change' :  $rankSub,
-                     'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+                     'user':'<a href="<?=base_url()?>user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
                      'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
                      'followers' : json[i].followers,
                      'following' : json[i].following,
@@ -322,7 +397,6 @@
                "columns"    : [
 
                {'data': 'rank'},
-               {'data': 'change'},
 
                {'data': 'user'},
                {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
@@ -334,494 +408,254 @@
 
                ]
                });
-   $('#collegebasketball-accounts').DataTable({
-          //'deferRender': false,
-          'ajax'       : {
-            "type"   : "Get",
-            "processing": true,
-        "serverSide": true,
-        "ordering": true,
-        "searching": true,
+$('#MLS-accounts').DataTable({
+                        //'deferRender': false,
+                        'ajax'       : {
+                          "type"   : "Get",
+                          "processing": true,
+                      "serverSide": true,
+                      "ordering": true,
+                      "searching": true,
 
-        "deferLoading": 57,
-            "url"    : "/users/get_latest/collegebasketball",
-            "dataSrc": function (json) {
-              var return_data = new Array();
-              for(var i=0;i< json.length; i++){
-                $rankSub = json[i].rankingSub;
-              if ($rankSub > 0){
-              $rankSub =  '<span class="text-success"><i class="fa fa-sort-asc"></i>' + json[i].rankingSub + '</span>';
-              }
-              if ($rankSub == 0){
-                $rankSub =  '<span class="text-alert"><i class="fa fa-minus"></i></span>';
-              }
+                      "deferLoading": 57,
+                          "url"    : "/users/get_latest/mls",
+                          "dataSrc": function (json) {
+                            var return_data = new Array();
+                            for(var i=0;i< json.length; i++){
+                          $rank = i +1;
+                              return_data.push({
+                                 'rank' :  $rank,
+                                'user':'<a href="<?=base_url()?>user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+                                'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+                                'followers' : json[i].followers,
+                                'following' : json[i].following,
+                                'followers_today_count' : json[i].followers_today_count,
+                              })
+                            }
+                            return return_data;
+                          }
+                          },
+                          "columns"    : [
 
-              if ($rankSub < 0){
-              $rankSub =  '<span class="text-alert"><i class="fa fa-sort-desc"></i>' + json[i].rankingSub + '</span>';
-              }
-            $rank = i +1;
-                return_data.push({
-                   'rank' :  $rank,
-                   'change' :  $rankSub,
-                  'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
-                  'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
-                  'followers' : json[i].followers,
-                  'following' : json[i].following,
-                  'followers_today_count' : json[i].followers_today_count,
-                })
-              }
-              return return_data;
-            }
-            },
-            "columns"    : [
+                          {'data': 'rank'},
 
-            {'data': 'rank'},
-            {'data': 'change'},
-
-            {'data': 'user'},
-            {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-            {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-            {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                          {'data': 'user'},
+                          {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                          {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                          {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
 
 
 
 
-            ]
-            });
-   $('#premierleague-accounts').DataTable({
-          //'deferRender': false,
-          'ajax'       : {
-            "type"   : "Get",
-            "processing": true,
-        "serverSide": true,
-        "ordering": true,
-        "searching": true,
+                          ]
+                          });
+$('#nflplayer-accounts').DataTable({
+                                   //'deferRender': false,
+                                   'ajax'       : {
+                                     "type"   : "Get",
+                                     "processing": true,
+                                 "serverSide": true,
+                                 "ordering": true,
+                                 "searching": true,
 
-        "deferLoading": 57,
-            "url"    : "/users/get_latest/premierleague",
-            "dataSrc": function (json) {
-              var return_data = new Array();
-              for(var i=0;i< json.length; i++){
-                $rankSub = json[i].rankingSub;
-              if ($rankSub > 0){
-              $rankSub =  '<span class="text-success"><i class="fa fa-sort-asc"></i>' + json[i].rankingSub + '</span>';
-              }
-              if ($rankSub == 0){
-                $rankSub =  '<span class="text-alert"><i class="fa fa-minus"></i></span>';
-              }
+                                 "deferLoading": 57,
+                                     "url"    : "/users/get_latest/nflplayers",
+                                     "dataSrc": function (json) {
+                                       var return_data = new Array();
+                                       for(var i=0;i< json.length; i++){
+                                     $rank = i +1;
+                                         return_data.push({
+                                            'rank' :  $rank,
+                                           'user':'<a href="<?=base_url()?>user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+                                           'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+                                           'followers' : json[i].followers,
+                                           'following' : json[i].following,
+                                           'followers_today_count' : json[i].followers_today_count,
+                                         })
+                                       }
+                                       return return_data;
+                                     }
+                                     },
+                                     "columns"    : [
 
-              if ($rankSub < 0){
-              $rankSub =  '<span class="text-alert"><i class="fa fa-sort-desc"></i>' + json[i].rankingSub + '</span>';
-              }
-            $rank = i +1;
-                return_data.push({
-                   'rank' :  $rank,
-                   'change' :  $rankSub,
-                  'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
-                  'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
-                  'followers' : json[i].followers,
-                  'following' : json[i].following,
-                  'followers_today_count' : json[i].followers_today_count,
-                })
-              }
-              return return_data;
-            }
-            },
-            "columns"    : [
+                                     {'data': 'rank'},
 
-            {'data': 'rank'},
-            {'data': 'change'},
-
-            {'data': 'user'},
-            {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-            {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-            {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                                     {'data': 'user'},
+                                     {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                                     {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                                     {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
 
 
 
 
-            ]
-            });
-   $('#nflplayer-accounts').DataTable({
-          //'deferRender': false,
-          'ajax'       : {
-            "type"   : "Get",
-            "processing": true,
-        "serverSide": true,
-        "ordering": true,
-        "searching": true,
+                                     ]
+                                     });
+    $('#NFL-accounts').DataTable({
+                            //'deferRender': false,
+                            'ajax'       : {
+                              "type"   : "Get",
+                              "processing": true,
+                          "serverSide": true,
+                          "ordering": true,
+                          "searching": true,
 
-        "deferLoading": 57,
-            "url"    : "/users/get_latest/nflplayers",
-            "dataSrc": function (json) {
-              var return_data = new Array();
-              for(var i=0;i< json.length; i++){
-                $rankSub = json[i].rankingSub;
-              if ($rankSub > 0){
-              $rankSub =  '<span class="text-success"><i class="fa fa-sort-asc"></i>' + json[i].rankingSub + '</span>';
-              }
-              if ($rankSub == 0){
-                $rankSub =  '<span class="text-alert"><i class="fa fa-minus"></i></span>';
-              }
+                          "deferLoading": 57,
+                              "url"    : "/users/get_latest/nfl",
+                              "dataSrc": function (json) {
+                                var return_data = new Array();
+                                for(var i=0;i< json.length; i++){
+                              $rank = i +1;
+                                  return_data.push({
+                                     'rank' :  $rank,
+                                    'user':'<a href="<?=base_url()?>user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+                                    'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+                                    'followers' : json[i].followers,
+                                    'following' : json[i].following,
+                                    'followers_today_count' : json[i].followers_today_count,
+                                  })
+                                }
+                                return return_data;
+                              }
+                              },
+                              "columns"    : [
 
-              if ($rankSub < 0){
-              $rankSub =  '<span class="text-alert"><i class="fa fa-sort-desc"></i>' + json[i].rankingSub + '</span>';
-              }
-            $rank = i +1;
-                return_data.push({
-                   'rank' :  $rank,
-                   'change' :  $rankSub,
-                  'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
-                  'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
-                  'followers' : json[i].followers,
-                  'following' : json[i].following,
-                  'followers_today_count' : json[i].followers_today_count,
-                })
-              }
-              return return_data;
-            }
-            },
-            "columns"    : [
+                              {'data': 'rank'},
 
-            {'data': 'rank'},
-            {'data': 'change'},
-
-            {'data': 'user'},
-            {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-            {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-            {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                              {'data': 'user'},
+                              {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                              {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                              {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
 
 
 
 
-            ]
-            });
-   $('#MLS-accounts').DataTable({
-          //'deferRender': false,
-          'ajax'       : {
-            "type"   : "Get",
-            "processing": true,
-        "serverSide": true,
-        "ordering": true,
-        "searching": true,
+                              ]
+                              });
 
-        "deferLoading": 57,
-            "url"    : "/users/get_latest/MLS",
-
-            "dataSrc": function (json) {
-              var return_data = new Array();
-              for(var i=0;i< json.length; i++){
-                $rankSub = json[i].rankingSub;
-              if ($rankSub > 0){
-              $rankSub =  '<span class="text-success"><i class="fa fa-sort-asc"></i>' + json[i].rankingSub + '</span>';
-              }
-              if ($rankSub == 0){
-                $rankSub =  '<span class="text-alert"><i class="fa fa-minus"></i></span>';
-              }
-
-              if ($rankSub < 0){
-              $rankSub =  '<span class="text-alert"><i class="fa fa-sort-desc"></i>' + json[i].rankingSub + '</span>';
-              }
-      $rank = i +1;
-                return_data.push({
-                   'rank' :  $rank,
-                   'change' :  $rankSub,
-                  'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
-                  'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
-                  'followers' : json[i].followers,
-                  'following' : json[i].following,
-                  'followers_today_count' : json[i].followers_today_count,
-                })
-              }
-              return return_data;
-            }
-          },
-          "columns"    : [
-
-            {'data': 'rank'},
-            {'data': 'change'},
-
-            {'data': 'user'},
-            {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-            {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-            {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-
-
-
-
-          ]
-      });
-   $('#MLB-accounts').DataTable({
-          //'deferRender': false,
-          'ajax'       : {
-            "type"   : "Get",
-            "processing": true,
-        "serverSide": true,
-        "ordering": true,
-        "searching": true,
-
-        "deferLoading": 57,
-            "url"    : "/users/get_latest/mlb",
-            "dataSrc": function (json) {
-              var return_data = new Array();
-              for(var i=0;i< json.length; i++){
-                $rankSub = json[i].rankingSub;
-              if ($rankSub > 0){
-              $rankSub =  '<span class="text-success"><i class="fa fa-sort-asc"></i>' + json[i].rankingSub + '</span>';
-              }
-              if ($rankSub == 0){
-                $rankSub =  '<span class="text-alert"><i class="fa fa-minus"></i></span>';
-              }
-
-              if ($rankSub < 0){
-              $rankSub =  '<span class="text-alert"><i class="fa fa-sort-desc"></i>' + json[i].rankingSub + '</span>';
-              }
-            $rank = i +1;
-                return_data.push({
-                   'rank' :  $rank,
-                   'change' :  $rankSub,
-                  'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
-                  'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
-                  'followers' : json[i].followers,
-                  'following' : json[i].following,
-                  'followers_today_count' : json[i].followers_today_count,
-                })
-              }
-              return return_data;
-            }
-            },
-            "columns"    : [
-
-            {'data': 'rank'},
-            {'data': 'change'},
-
-            {'data': 'user'},
-            {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-            {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-            {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-
-
-
-
-            ]
-            });
 $('#NBA-accounts').DataTable({
-       //'deferRender': false,
-       'ajax'       : {
-         "type"   : "Get",
-         "processing": true,
-     "serverSide": true,
-     "ordering": true,
-     "searching": true,
+                                           //'deferRender': false,
+                                           'ajax'       : {
+                                             "type"   : "Get",
+                                             "processing": true,
+                                         "serverSide": true,
+                                         "ordering": true,
+                                         "searching": true,
 
-     "deferLoading": 57,
-         "url"    : "/users/get_latest/nba",
-         "dataSrc": function (json) {
-           var return_data = new Array();
-           for(var i=0;i< json.length; i++){
-             $rankSub = json[i].rankingSub;
-           if ($rankSub > 0){
-           $rankSub =  '<span class="text-success"><i class="fa fa-sort-asc"></i>' + json[i].rankingSub + '</span>';
-           }
-           if ($rankSub == 0){
-             $rankSub =  '<span class="text-alert"><i class="fa fa-minus"></i></span>';
-           }
+                                         "deferLoading": 57,
+                                             "url"    : "/users/get_latest/nba",
+                                             "dataSrc": function (json) {
+                                               var return_data = new Array();
+                                               for(var i=0;i< json.length; i++){
+                                             $rank = i +1;
+                                                 return_data.push({
+                                                    'rank' :  $rank,
+                                                   'user':'<a href="<?=base_url()?>user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+                                                   'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+                                                   'followers' : json[i].followers,
+                                                   'following' : json[i].following,
+                                                   'followers_today_count' : json[i].followers_today_count,
+                                                 })
+                                               }
+                                               return return_data;
+                                             }
+                                             },
+                                             "columns"    : [
 
-           if ($rankSub < 0){
-           $rankSub =  '<span class="text-alert"><i class="fa fa-sort-desc"></i>' + json[i].rankingSub + '</span>';
-           }
-         $rank = i +1;
-             return_data.push({
-                'rank' :  $rank,
-                'change' :  $rankSub,
-               'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
-               'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
-               'followers' : json[i].followers,
-               'following' : json[i].following,
-               'followers_today_count' : json[i].followers_today_count,
-             })
-           }
-           return return_data;
-         }
-         },
-         "columns"    : [
+                                             {'data': 'rank'},
 
-         {'data': 'rank'},
-         {'data': 'change'},
-
-         {'data': 'user'},
-         {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-         {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-         {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                                             {'data': 'user'},
+                                             {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                                             {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                                             {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
 
 
 
 
-         ]
-         });
-$('#NFL-accounts').DataTable({
-       //'deferRender': false,
-       'ajax'       : {
-         "type"   : "Get",
-         "processing": true,
-     "serverSide": true,
-     "ordering": true,
-     "searching": true,
+                                             ]
+                                             });
+$('#MLB-accounts').DataTable({
+                                                                                      //'deferRender': false,
+                                                                                      'ajax'       : {
+                                                                                        "type"   : "Get",
+                                                                                        "processing": true,
+                                                                                    "serverSide": true,
+                                                                                    "ordering": true,
+                                                                                    "searching": true,
 
-     "deferLoading": 57,
-         "url"    : "/users/get_latest/nfl",
-         "dataSrc": function (json) {
-           var return_data = new Array();
-           for(var i=0;i< json.length; i++){
-             $rankSub = json[i].rankingSub;
-           if ($rankSub > 0){
-           $rankSub =  '<span class="text-success"><i class="fa fa-sort-asc"></i>' + json[i].rankingSub + '</span>';
-           }
-           if ($rankSub == 0){
-             $rankSub =  '<span class="text-alert"><i class="fa fa-minus"></i></span>';
-           }
+                                                                                    "deferLoading": 57,
+                                                                                        "url"    : "/users/get_latest/mlb",
+                                                                                        "dataSrc": function (json) {
+                                                                                          var return_data = new Array();
+                                                                                          for(var i=0;i< json.length; i++){
+                                                                                        $rank = i +1;
+                                                                                            return_data.push({
+                                                                                               'rank' :  $rank,
+                                                                                              'user':'<a href="<?=base_url()?>user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+                                                                                              'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+                                                                                              'followers' : json[i].followers,
+                                                                                              'following' : json[i].following,
+                                                                                              'followers_today_count' : json[i].followers_today_count,
+                                                                                            })
+                                                                                          }
+                                                                                          return return_data;
+                                                                                        }
+                                                                                        },
+                                                                                        "columns"    : [
 
-           if ($rankSub < 0){
-           $rankSub =  '<span class="text-alert"><i class="fa fa-sort-desc"></i>' + json[i].rankingSub + '</span>';
-           }
-         $rank = i +1;
-             return_data.push({
-                'rank' :  $rank,
-                'change' :  $rankSub,
-               'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
-               'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
-               'followers' : json[i].followers,
-               'following' : json[i].following,
-               'followers_today_count' : json[i].followers_today_count,
-             })
-           }
-           return return_data;
-         }
-         },
-         "columns"    : [
+                                                                                        {'data': 'rank'},
 
-         {'data': 'rank'},
-         {'data': 'change'},
-
-         {'data': 'user'},
-         {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-         {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-         {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                                                                                        {'data': 'user'},
+                                                                                        {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                                                                                        {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                                                                                        {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
 
 
 
 
-         ]
-         });
-$('#ALL-accounts').DataTable({
-    //'deferRender': false,
-    'ajax'       : {
-      "type"   : "Get",
-      "processing": true,
-  "serverSide": true,
-  "ordering": true,
-  "searching": true,
+                                                                                        ]
+                                                                                        });
 
-  "deferLoading": 57,
-      "url"    : "/users/get_latest/all",
+      $('#cfb-accounts').DataTable({
+                                                                                                                                                                            //'deferRender': false,
+                                                                                                                                                                            'ajax'       : {
+                                                                                                                                                                              "type"   : "Get",
+                                                                                                                                                                              "processing": true,
+                                                                                                                                                                          "serverSide": true,
+                                                                                                                                                                          "ordering": true,
+                                                                                                                                                                          "searching": true,
 
-      "dataSrc": function (json) {
-        var return_data = new Array();
-        for(var i=0;i< json.length; i++){
-          $rankSub = json[i].rankingSub;
-        if ($rankSub > 0){
-        $rankSub =  '<span class="text-success"><i class="fa fa-sort-asc"></i>' + json[i].rankingSub + '</span>';
-        }
-        if ($rankSub == 0){
-          $rankSub =  '<span class="text-alert"><i class="fa fa-minus"></i></span>';
-        }
+                                                                                                                                                                          "deferLoading": 57,
+                                                                                                                                                                              "url"    : "/users/get_latest/cfb",
+                                                                                                                                                                              "dataSrc": function (json) {
+                                                                                                                                                                                var return_data = new Array();
+                                                                                                                                                                                for(var i=0;i< json.length; i++){
+                                                                                                                                                                              $rank = i +1;
+                                                                                                                                                                                  return_data.push({
+                                                                                                                                                                                     'rank' :  $rank,
+                                                                                                                                                                                    'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
+                                                                                                                                                                                    'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
+                                                                                                                                                                                    'followers' : json[i].followers,
+                                                                                                                                                                                    'following' : json[i].following,
+                                                                                                                                                                                    'followers_today_count' : json[i].followers_today_count,
+                                                                                                                                                                                  })
+                                                                                                                                                                                }
+                                                                                                                                                                                return return_data;
+                                                                                                                                                                              }
+                                                                                                                                                                              },
+                                                                                                                                                                              "columns"    : [
 
-        if ($rankSub < 0){
-        $rankSub =  '<span class="text-alert"><i class="fa fa-sort-desc"></i>' + json[i].rankingSub + '</span>';
-        }
-  $rank = i +1;
-          return_data.push({
-             'rank' :  $rank,
-             'change' :  $rankSub,
-            'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
-            'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
-            'followers' : json[i].followers,
-            'following' : json[i].following,
-            'followers_today_count' : json[i].followers_today_count,
-          })
-        }
-        return return_data;
-      }
-    },
-    "columns"    : [
+                                                                                                                                                                              {'data': 'rank'},
 
-      {'data': 'rank'},
-      {'data': 'change'},
-
-      {'data': 'user'},
-      {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-      {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-      {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                                                                                                                                                                              {'data': 'user'},
+                                                                                                                                                                              {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                                                                                                                                                                              {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
+                                                                                                                                                                              {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
 
 
 
 
-    ]
-  });
-$('#cfb-accounts').DataTable({
-    //'deferRender': false,
-    'ajax'       : {
-      "type"   : "Get",
-      "processing": true,
-  "serverSide": true,
-  "ordering": true,
-  "searching": true,
-
-  "deferLoading": 57,
-      "url"    : "/users/get_latest/cfb",
-      "dataSrc": function (json) {
-        var return_data = new Array();
-        for(var i=0;i< json.length; i++){
-          $rankSub = json[i].rankingSub;
-        if ($rankSub > 0){
-        $rankSub =  '<span class="text-success"><i class="fa fa-sort-asc"></i>' + json[i].rankingSub + '</span>';
-        }
-        if ($rankSub == 0){
-          $rankSub =  '<span class="text-alert"><i class="fa fa-minus"></i></span>';
-        }
-
-        if ($rankSub < 0){
-        $rankSub =  '<span class="text-alert"><i class="fa fa-sort-desc"></i>' + json[i].rankingSub + '</span>';
-        }
-  $rank = i +1;
-          return_data.push({
-             'rank' :  $rank,
-             'change' :  $rankSub,
-            'user':'<a href="user/'+ json[i].screen_name +' "><img style="border-radius:50%; float:left;" src="' + json[i].profile_image_url + '"><div style="padding-left:65px;" class="text-box"> <strong>' + json[i].name + '</strong> ' + " @" + json[i].screen_name + '</div></a>',
-            'profile_image_url'  : '<img src="' + json[i].profile_image_url + '">',
-            'followers' : json[i].followers,
-            'following' : json[i].following,
-            'followers_today_count' : json[i].followers_today_count,
-          })
-        }
-        return return_data;
-      }
-    },
-    "columns"    : [
-
-      {'data': 'rank'},
-      {'data': 'change'},
-
-      {'data': 'user'},
-      {'data': 'followers', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-      {'data': 'following', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-      {'data': 'followers_today_count', render: $.fn.dataTable.render.number(',', '.', 0, '') },
-
-
-
-
-    ]
-  });
+                                                                                                                                                                              ]
+                                                                                                                                                                              });
   </script>
 
 
