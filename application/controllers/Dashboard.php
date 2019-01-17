@@ -22,25 +22,25 @@ class Dashboard extends CI_Controller
 
     public function home()
     {
-        if ($this->ion_auth->logged_in()) {
-            if ($this->ion_auth->is_admin()) {
-                $this->load->view('admin/header');
-                $data['categories']=$this->Category_model->getAllCategoriesId();
-                $this->load->view('admin/dashboard', $data);
-                $this->load->view('admin/footer', $data);
-            } else {
-                $data['user']=$this->ion_auth->user()->row();
-                $user = $this->ion_auth->user()->row();
-                $accountName = $user->company;
-                $data['rankings']=$this->UserRank_model->getAllRanks($accountName);
-                $this->load->view('members/header');
-                $data['userInfo']=$this->TwitterAccounts_model->getAccountInfo($accountName);
-                $this->load->view('members/dashboard', $data);
-                $this->load->view('members/footer');
-            }
-        } else {
-            redirect('auth/login', 'refresh');
-        }
+        // if ($this->ion_auth->logged_in()) {
+        //     if ($this->ion_auth->is_admin()) {
+        $this->load->view('admin/header');
+        $data['categories']=$this->Category_model->getAllCategoriesId();
+        $this->load->view('admin/dashboard', $data);
+        $this->load->view('admin/footer', $data);
+        //     } else {
+        //         $data['user']=$this->ion_auth->user()->row();
+        //         $user = $this->ion_auth->user()->row();
+        //         $accountName = $user->company;
+        //         $data['rankings']=$this->UserRank_model->getAllRanks($accountName);
+        //         $this->load->view('members/header');
+        //         $data['userInfo']=$this->TwitterAccounts_model->getAccountInfo($accountName);
+        //         $this->load->view('members/dashboard', $data);
+        //         $this->load->view('members/footer');
+        //     }
+        // } else {
+        //     redirect('auth/login', 'refresh');
+        // }
     }
     public function user($user)
     {

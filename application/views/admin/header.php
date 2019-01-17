@@ -44,17 +44,18 @@
     <div class="sidebar-wrapper">
       <ul class="nav">
         <li class="nav-item active ">
-          <a class="nav-link" href="<?=base_url()?>dashboard">
+          <a class="nav-link" href="<?=base_url()?>">
             <i class="material-icons">dashboard</i>
-            <p>Dashboard</p>
+            <p>Home</p>
 
             </a>
           </li>
-          <li class="nav-item active-pro ">
-            <a class="nav-link" href="/logout">
-              <i class="material-person"></i>
-              <p>Logout</p>
-            </a>
+
+          <li style="padding-top:55px;"class="nav-item active-pro ">
+            <center><a href="https://www.samford.edu/sports-analytics/"><img style="width:100px" src="https://www.samford.edu/sports-analytics/images/logos/sports-analytics-logo.jpg"></a></center>
+            <p style="font-size:15px;padding-left:10px;">
+              Samford Center For Sports Analytics</p>
+
           </li>
         </ul>
       </div>

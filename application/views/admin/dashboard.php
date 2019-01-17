@@ -2,6 +2,12 @@
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
+          <div class="alert alert-block">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">What is Sports Social Rank?</h4>
+            Sports Social Rank is a ranking of sports teams and players based on twitter followers, being updated
+            every 15 minutes.
+          </div>
 
           <div class="row">
 
