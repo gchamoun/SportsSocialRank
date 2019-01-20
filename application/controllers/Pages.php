@@ -14,12 +14,16 @@ class Pages extends CI_Controller
         //
         // $data['latestUpdate'] = $this->DBUpdate_model->latestUpdate();
         // $data['previousUpdate'] = $this->DBUpdate_model->previousUpdate();
-
-
-        $this->load->view('templates/headerHome');
-
-        $this->load->view('pages/'. $page, $data);
-        $this->load->view('templates/footer', $data);
+        if ($page == 'about') {
+            $this->load->view('templates/aboutheader');
+            $this->load->view('pages/'. $page, $data);
+            $this->load->view('admin/footer', $data);
+        }
+        if ($page == 'contact') {
+            $this->load->view('templates/contactheader');
+            $this->load->view('pages/'. $page, $data);
+            $this->load->view('admin/footer', $data);
+        }
     }
 
     public function user($name)

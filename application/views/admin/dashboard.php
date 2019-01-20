@@ -7,6 +7,7 @@
             <h4 class="alert-heading">What is Sports Social Rank?</h4>
             Sports Social Rank is a ranking of sports teams and players based on twitter followers being updated
             every 15 minutes.
+          </br></br><em>Followers Today</em> is followers gained since 12:00 am central time of the current day
           </div>
 
           <div class="row">

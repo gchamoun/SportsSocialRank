@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : Oct 5, 2018, 10:49:31 PM
     Author     : gcham
 */
@@ -11,12 +11,16 @@ body {
        padding-top: 67px;
     background-color:#ffffff;
 
+}.main-panel>.content {
+    margin-top: 20px;
+    padding: 30px 15px;
+    min-height: calc(100vh - 123px);
 }
 .seach-card{
     background-color:#fafafa;
 }
 .search-group{
-    
+
     padding-top: 8px;
 
 }
