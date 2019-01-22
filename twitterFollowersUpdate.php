@@ -183,7 +183,7 @@ function insertTwitter($groupdId, $twitterInfo, $differenceInFollowers)
 
         $sql = "UPDATE twitter_accounts
        SET name ='".$twitterInfo->name."', profile_image_url ='".
-       $twitterInfo->profile_image_url."' , profile_banner_url ='".$twitterInfo->profile_banner_url."',
+       $twitterInfo->profile_image_url."' , profile_banner_url ='".$twitterInfo->profile_banner_url."'
        WHERE screen_name = '".$twitterInfo->screen_name."';";
         echo $sql;
 
@@ -198,7 +198,7 @@ WHERE display_name = '".$twitterInfo->screen_name."';";
 
         $sql = "UPDATE twitter_accounts
 SET name ='".$twitterInfo->name."', profile_image_url ='".
-$twitterInfo->profile_image_url."' , profile_banner_url ='".$twitterInfo->profile_banner_url."',
+$twitterInfo->profile_image_url."' , profile_banner_url ='".$twitterInfo->profile_banner_url."'
 WHERE screen_name = '".$twitterInfo->screen_name."';";
         echo $sql;
         runQuery($sql, true);
@@ -487,7 +487,7 @@ function addTwitterDbUpdate($dateTime, $currentEndId, $numUsers, $currentStartId
 
 function runQuery($sql, $Insert)
 {
-    print $sql . PHP_EOL;
+    // print $sql . PHP_EOL;
 
     global $conn; // Now all instances where the function refers to $x will refer to the GLOBAL version of $x, **not** just $x inside the function itself
     $result = $conn->query($sql);
