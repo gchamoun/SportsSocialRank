@@ -18,7 +18,7 @@ NFL Players,  Premier League, and FCS Football. We will continue to update this 
 <h4>The site was created by George Chamoun as a software development intern
   for the Samford Center for Sports Analytics. If you have any questions or
   just want to connect George's linkedin is listed below. George can also be reached at
-Gchamoun@samford.edu</br></br>
+Gchamoun@samford.edu.</br></br>
 <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="gchamoun"><a class="LI-simple-link" href='https://www.linkedin.com/in/gchamoun?trk=profile-badge'>George Chamoun</a></div>
 <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </br></br>
