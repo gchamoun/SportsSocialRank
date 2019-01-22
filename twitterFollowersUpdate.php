@@ -250,7 +250,6 @@ function insertTwitterRank($currentGroupRunId)
                   where tr.twitter_accounts_id = '".$twitterAccounts_id."' and tr.category_details_id = '".$categoryId."'
                   and date BETWEEN DATE_SUB(NOW(), INTERVAL 7 DAY) AND NOW() order by date asc limit 1";
                 $rankings = runQuery($sql, false);
-                echo $sql;
                 $rankOneWeekAgo = $rankings['rank'];
                 //Get Rank for 30 days
                 $sql = "select * from twitter_rank_archive tr inner join
