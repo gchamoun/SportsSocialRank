@@ -64,13 +64,13 @@
 
               </a>
             </li>
-            <li class="nav-item ">
+            <!-- <li class="nav-item ">
               <a class="nav-link" href="<?=base_url()?>contact">
                 <i class="material-icons">chat</i>
                 <p>Contact Us</p>
 
                 </a>
-              </li>
+              </li> -->
           <li style="padding-top:55px;"class="nav-item active-pro ">
             <center><a href="https://www.samford.edu/sports-analytics/"><img style="width:100px" src="https://www.samford.edu/sports-analytics/images/logos/sports-analytics-logo.jpg"></a></center>
             <p style="font-size:15px;padding-left:10px;">
