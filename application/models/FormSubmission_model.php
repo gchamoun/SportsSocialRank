@@ -9,7 +9,7 @@ class FormSubmission_model extends CI_Model
 
     public function demoFormSubmit($data)
     {
-        $this->db->insert('demo_form', $data);
+        $this->db->insert('contact_form', $data);
 
         echo("1");
     }

@@ -22,7 +22,7 @@ class Pages extends CI_Controller
         if ($page == 'contact') {
             $this->load->view('templates/contactheader');
             $this->load->view('pages/'. $page, $data);
-            $this->load->view('admin/footer', $data);
+]            $this->load->view('admin/footer', $data);
         }
     }
 

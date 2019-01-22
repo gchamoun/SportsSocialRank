@@ -179,6 +179,13 @@ function insertTwitter($groupdId, $twitterInfo, $differenceInFollowers)
 
         $sql = "INSERT INTO twitter_data(twitter_accounts_id, twitter_dbupdates_id, name, date, display_name, followers, following, profile_image_url, profile_banner_url,followers_today_count) "
        . "VALUES ('$accounts_id','$groupdId', '$twitterInfo->name','$date', '$twitterInfo->screen_name','$twitterInfo->followers_count','$twitterInfo->friends_count','$twitterInfo->profile_image_url','$twitterInfo->profile_banner_url','$differenceInFollowers')";
+        runQuery($sql, true);
+
+        $sql = "UPDATE twitter_accounts
+       SET name ='".$twitterInfo->name."', profile_image_url ='".
+       $twitterInfo->profile_image_url."' , profile_banner_url ='".$twitterInfo->profile_banner_url."',
+       WHERE screen_name = '".$twitterInfo->screen_name."';";
+        echo $sql;
 
         runQuery($sql, true);
     } else {
@@ -187,6 +194,13 @@ function insertTwitter($groupdId, $twitterInfo, $differenceInFollowers)
         $twitterInfo->profile_image_url."' , profile_banner_url ='".$twitterInfo->profile_banner_url."', "
         . "followers_today_count ='".$differenceInFollowers."'
 WHERE display_name = '".$twitterInfo->screen_name."';";
+        runQuery($sql, true);
+
+        $sql = "UPDATE twitter_accounts
+SET name ='".$twitterInfo->name."', profile_image_url ='".
+$twitterInfo->profile_image_url."' , profile_banner_url ='".$twitterInfo->profile_banner_url."',
+WHERE screen_name = '".$twitterInfo->screen_name."';";
+        echo $sql;
         runQuery($sql, true);
     }
 }
