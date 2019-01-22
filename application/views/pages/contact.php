@@ -1,6 +1,8 @@
-<section id="demo" class="bg-dark text-white">
+<div class="content">
+  <div class="container-fluid">
+    <div style="padding:50px" class="alert alert-block">
   <div class="container text-center">
-    <h2 class="mb-4">Sign up for a Free Demo and Walkthrough</h2>
+    <h2 class="text-left mb-4">Contact Us</h2>
     <form id="demo-form">
     </br>
   </br>
