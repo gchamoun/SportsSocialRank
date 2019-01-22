@@ -16,7 +16,7 @@
   <?php foreach ($categories as $category) {
     ?>
 
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-12 col-md-12">
                             <div class="card">
                 <div class="card-header card-header-warning">
                   <h4 class="card-title"><?php echo $category->name; ?></h4>
